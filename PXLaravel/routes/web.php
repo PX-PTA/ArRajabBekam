@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MedicalRecordController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,6 @@ Route::get('/', function () {
     }
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/404', function () {
     return view('notfound');
@@ -37,7 +35,7 @@ Route::get('/blank', function () {
     return view('starter');
 })->name('starter');
 
-
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/users', [UsersController::class, 'index'])->middleware(['auth', 'verified'])->name('users.index');
 Route::get('/users/create', [UsersController::class, 'create'])->middleware(['auth', 'verified'])->name('users.create');

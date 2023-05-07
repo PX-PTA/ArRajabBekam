@@ -29,7 +29,7 @@
                                         <h5>Nama</h5>
                                         <span>{{$patient->name}}</span>
                                     </div>
-                                    <div class="ul-contact-detail__info-1">
+                                    <div onclick="window.location='https://api.whatsapp.com/send?phone={{$patient->phoneNo}}'" class="ul-contact-detail__info-1">
                                         <h5>No Telp. / Wa</h5>
                                         <span>{{$patient->phoneNo}}</span>
                                     </div>

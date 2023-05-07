@@ -18,7 +18,7 @@
                             <div class="card-body text-center">
                                 <i class="i-Doctor"></i>
                                 <p class="text-muted mt-2 mb-2">Total Patient</p>
-                                <p class="text-primary text-24 line-height-1 m-0">21</p>
+                                <p class="text-primary text-24 line-height-1 m-0"> {{$patientData->count()}} </p>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                             <div class="card-body text-center">
                                 <i class="i-Files"></i>
                                 <p class="text-muted mt-2 mb-2">Total Medical Checkup</p>
-                                <p class="text-primary text-24 line-height-1 m-0">21</p>
+                                <p class="text-primary text-24 line-height-1 m-0"> {{ $medicalRecordData->count() }} </p>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                             <div class="card-body text-center">
                                 <i class="i-Business-ManWoman"></i>                    
                                 <p class="text-muted mt-2 mb-2">Today Patient</p>
-                                <p class="text-primary text-24 line-height-1 m-0">10</p>
+                                <p class="text-primary text-24 line-height-1 m-0">{{$patientToday}}</p>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                             <div class="card-body text-center">
                                 <i class="i-File-Cloud"></i>                    
                                 <p class="text-muted mt-2 mb-2">Today Medical Checkup</p>
-                                <p class="text-primary text-24 line-height-1 m-0">10</p>
+                                <p class="text-primary text-24 line-height-1 m-0">{{$medicalRecordToday}}</p>
                             </div>
                         </div>
                     </div>
@@ -55,42 +55,25 @@
             <div class="col-lg-7 col-md-12">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <div class="card-title">Last Month Summary</div>
+                        <div class="card-title">Last Month Summary - {{ Carbon\Carbon::now()->subMonth()->format("M") }}</div>
                         <div class="row">
                             <div class="col-md-5">
                                 <table class="table">
                                     <thead class="card-header">
                                         <tr>
                                             <th scope="col">Item</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">Jumlah</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Portable Speaker</td>
-                                            <td class="font-weight-bold text-success">+ $1200</td>
+                                            <td>Pasien</td>
+                                            <td class="font-weight-bold text-success">{!! $patientMonth !!}</td>
                                         </tr>
                                         <tr>
-                                            <td>Portable Headphone</td>
-                                            <td class="font-weight-bold">In Stock</td>
+                                            <td>Jumlah Rekam Medis</td>
+                                            <td class="font-weight-bold  text-success">{!! $medicalRecordMonth !!}</td>
                                         </tr>
-                                        <tr>
-                                            <td>Speaker</td>
-                                            <td class="text-danger">Out of stock</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Watch</td>
-                                            <td class="text-warning font-weight-bold">Low stock</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Watch</td>
-                                            <td class="text-warning font-weight-bold">Low stock</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Watch</td>
-                                            <td class="text-warning font-weight-bold">Low stock</td>
-                                        </tr>
-
                                     </tbody>
                                 </table>
                             </div>
