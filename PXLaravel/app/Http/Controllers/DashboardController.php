@@ -24,6 +24,13 @@ class DashboardController extends Controller
         $medicalRecordMonth = MedicalRecord::whereMonth(
             'created_at', '=', Carbon::now()->subMonth()->month
         )->count();
+        $medicalRecordPaymentToday = MedicalRecord::whereDate('created_at', Carbon::today())->sum('payment_total');
+        $medicalRecordPayment = MedicalRecord::sum('payment_total');
+        $medicalRecordPaymentMonth = MedicalRecord::whereMonth(
+            'created_at', '=', Carbon::now()->subMonth()->month
+        )->sum('payment_total');
+        $medicalRecordDataToday = MedicalRecord::whereDate('created_at', Carbon::today())->get();
+        $patientDataToday = Patient::whereDate('created_at', Carbon::today())->get();
 
         return view('dashboard')
         ->with('medicalRecordData', $medicalRecord)
@@ -31,6 +38,11 @@ class DashboardController extends Controller
         ->with('medicalRecordToday',$medicalRecordToday)
         ->with('medicalRecordMonth',$medicalRecordMonth)
         ->with('patientToday',$patientToday)
-        ->with('patientMonth',$patientMonth);
+        ->with('patientMonth',$patientMonth)
+        ->with('medicalRecordDataToday',$medicalRecordDataToday)
+        ->with('patientDataToday',$patientDataToday)
+        ->with('medicalRecordPaymentToday',$medicalRecordPaymentToday)
+        ->with('medicalRecordPayment',$medicalRecordPayment)
+        ->with('medicalRecordPaymentMonth',$medicalRecordPaymentMonth);
     }
 }

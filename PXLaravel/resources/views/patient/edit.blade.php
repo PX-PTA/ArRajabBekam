@@ -79,6 +79,20 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <div class="row">
+                                                <div class="col-md-12 form-group mb-3">
+                                                    <label for="exampleInputEmail1">Detail Riwayat Operasi</label>
+                                                    <textarea class="form-control" id="surgery_details" name="surgery_details"
+                                                        placeholder="Input Detail Riwayat Operasi">{{$patient->surgery_details}}</textarea>
+                                                </div>
+                                                <div class="col-md-12 form-group mb-3">
+                                                    <label for="exampleInputEmail1">Detail konsumsi Obat</label>
+                                                    <textarea class="form-control" id="drug_details" name="drug_details"
+                                                        placeholder="Input Detail konsumsi Obat">{{$patient->drug_details}}</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="card-footer">
                                         <div class="mc-footer">

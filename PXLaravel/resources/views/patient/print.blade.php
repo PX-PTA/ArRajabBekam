@@ -93,8 +93,8 @@
             <td>{{$medicalRecord->diagnosis}}</td>
             <td>{{$medicalRecord->action}}</td>
             <td>{{$medicalRecord->medicine}}</td>
-            <td>{{$medicalRecord->no}}</td>
-            <td>{{$medicalRecord->no}}</td>
+            <td>{{$medicalRecord->blood_pressure_sys}}</td>
+            <td>{{$medicalRecord->blood_pressure_dia}}</td>
             <td>{{$medicalRecord->terapis}}</td>
         </tr>
         @endforeach

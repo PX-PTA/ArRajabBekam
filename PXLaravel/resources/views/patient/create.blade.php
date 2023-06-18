@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="slot">
         <div class="breadcrumb">
-            <h1>Patient</h1>
+            <h1>Pasien</h1>
             <ul>
-                <li><a href="">Create New Patient</a></li>
-                <li>Patient Data</li>
+                <li><a href="">Buat Pasien baru</a></li>
+                <li>Data Pasien</li>
             </ul>
         </div>
 
@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <div class="card o-hidden mb-4">
                     <div class="card-header">
-                        <h3 class="w-50 float-start card-title m-0">New Patient</h3>
+                        <h3 class="w-50 float-start card-title m-0">Pasien Baru</h3>
                     </div>
                     <div class="card-body">
                         <!-- begin::main-row -->
@@ -76,6 +76,21 @@
                                                     <span>Sedang konsumsi Obat</span>
                                                     <span class="checkmark"></span>
                                                 </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group row">
+                                            <div class="row">
+                                                <div class="col-md-12 form-group mb-3">
+                                                    <label for="exampleInputEmail1">Detail Riwayat Operasi</label>
+                                                    <textarea class="form-control" id="surgery_details" name="surgery_details"
+                                                        placeholder="Input Detail Riwayat Operasi"></textarea>
+                                                </div>
+                                                <div class="col-md-12 form-group mb-3">
+                                                    <label for="exampleInputEmail1">Detail konsumsi Obat</label>
+                                                    <textarea class="form-control" id="drug_details" name="drug_details"
+                                                        placeholder="Input Detail konsumsi Obat"></textarea>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

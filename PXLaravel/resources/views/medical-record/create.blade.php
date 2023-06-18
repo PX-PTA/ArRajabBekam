@@ -118,6 +118,15 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <div class="row">
+                                                <div class="col-md-12 form-group mb-3">
+                                                    <label for="total_payment">Biaya Konsultasi</label>
+                                                    <input type="number" class="form-control" id="total_payment" name="total_payment"
+                                                        placeholder="Biaya konsultasi">
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="card-footer">
                                             <div class="mc-footer">
                                                 <div class="row text-end">

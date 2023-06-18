@@ -13,4 +13,8 @@ class Patient extends Model
     {
         return $this->hasMany(MedicalRecord::class);
     }
+    public function lastMedicalRecords(): HasMany
+    {
+        return $this->HasMany(MedicalRecord::class)->latest();
+    }
 }

@@ -36,6 +36,7 @@
                                         <th scope="col">Umur</th>
                                         <th scope="col">Pengobatan</th>
                                         <th scope="col">Operasi</th>
+                                        <th scope="col">Terakhir periksa</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -62,6 +63,13 @@
                                             @else
                                             <span class="badge text-bg-warning">Tidak</span>
                                             @endif
+                                        </td>
+                                        <td onclick="window.location.href='{{route('patient.show',$patients->id)}}'">
+                                             @if($patients->lastMedicalRecords()->count() > 0) 
+                                             {{date('d M Y', strtotime($patients->lastMedicalRecords()->first()->date))}}
+                                             @else 
+                                                belum ada Rekam medis
+                                             @endif
                                         </td>
                                         <td>
                                             <a href="{{route('patient.edit',$patients->id)}}" class="text-success me-2">

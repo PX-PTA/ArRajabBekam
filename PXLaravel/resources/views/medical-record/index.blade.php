@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="slot">
         <div class="breadcrumb">
-            <h1>Medical Records</h1>
+            <h1>Rekam Medis</h1>
             <ul>
-                <li><a href="">Medical-Checkup</a></li>
-                <li>Medical-Checkup Data</li>
+                <li><a href="">Rekam Medis</a></li>
+                <li>Data Rekam Medis</li>
             </ul>
         </div>
 
@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="card o-hidden mb-4">
                     <div class="card-header">
-                        <h3 class="w-50 float-start card-title m-0">Medical Checkup Records</h3>
+                        <h3 class="w-50 float-start card-title m-0">Data Rekam Medis</h3>
                         <div class="dropdown dropleft text-end w-50 float-end">
                             <button class="btn bg-gray-700" type="button" id="dropdownMenuButton_table2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,22 +31,22 @@
                             <table id="user_table" class="table table-bordered text-center">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
                                         <th scope="col">No</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">Patient</th>
+                                        <th scope="col">Tanggal</th>
+                                        <th scope="col">Pasien</th>
                                         <th scope="col">Terapis</th>
+                                        <th scope="col">Tindakan</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($medicalRecordData as $medicalRecord)
                                     <tr>
-                                        <th onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'" scope="row">{{$medicalRecord->id}}</th>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->no}}</td>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{date('d M Y', strtotime($medicalRecord->date))}}</td>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->patient->name}}</td>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->terapis}}</td>
+                                        <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->action}}</td>
                                         <td>
                                             <a href="{{route('medical-record.edit',$medicalRecord->id)}}" class="text-success me-2">
                                                 <i class="nav-icon i-Pen-2 font-weight-bold"></i>
