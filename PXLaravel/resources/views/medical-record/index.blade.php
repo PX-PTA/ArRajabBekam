@@ -44,7 +44,7 @@
                                     <tr>
                                         <th onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'" scope="row">{{$medicalRecord->id}}</th>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->no}}</td>
-                                        <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->date}}</td>
+                                        <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{date('d M Y', strtotime($medicalRecord->date))}}</td>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->patient->name}}</td>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->terapis}}</td>
                                         <td>

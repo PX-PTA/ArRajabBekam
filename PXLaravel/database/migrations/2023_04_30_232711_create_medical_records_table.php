@@ -33,9 +33,13 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('medical_records', function (Blueprint $table) {
-            $table->foreign('patient_id')->references('id')->on('patients');
-        });
+        if (Schema::hasColumn('medical_records', 'patient_id'))
+        {
+            Schema::table('medical_records', function (Blueprint $table)
+            {
+                $table->dropColumn('patient_id');
+            });
+        }
         Schema::dropIfExists('medical_records');
     }
 };

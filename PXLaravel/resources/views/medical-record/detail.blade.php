@@ -44,7 +44,7 @@
                                         <p>#{{$medicalRecord->no}}</p>
                                     </div>
                                     <div class="col-md-6 text-sm-end">
-                                        <p><strong>Medical Checkup: </strong> {{$medicalRecord->date}}</p>
+                                        <p><strong>Medical Checkup: </strong> {{date('d M Y', strtotime($medicalRecord->date))}}</p>
                                     </div>
                                 </div>
                                 <div class="mt-3 mb-4 border-top"></div>
