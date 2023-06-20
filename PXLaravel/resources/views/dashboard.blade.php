@@ -187,7 +187,7 @@
                                 <tbody>
                                     @foreach($medicalRecordDataToday as $medicalRecord)
                                     <tr>
-                                        <th scope="row">{{$patient->id}}</th>
+                                        <th scope="row">{{$medicalRecord->id}}</th>
                                         <td>{{$medicalRecord->patient->name}}</td>
                                         <td>{{$medicalRecord->terapis}}</td>
                                         <td>{{$medicalRecord->action}}</td>

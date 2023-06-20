@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\finance;
+use App\Models\Finance;
+use App\Models\Patient;
 use App\Http\Requests\StorefinanceRequest;
 use App\Http\Requests\UpdatefinanceRequest;
 
@@ -13,7 +14,9 @@ class FinanceController extends Controller
      */
     public function index()
     {
-        //
+        $finaces = Finance::all();
+        return view('finance.index')
+        ->with('    ', $finaces);
     }
 
     /**

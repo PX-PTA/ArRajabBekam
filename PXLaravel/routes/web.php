@@ -5,6 +5,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MedicalRecordController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FinanceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,7 +60,7 @@ Route::get('/medical-records/destroy/{medicalRecord}', [MedicalRecordController:
 Route::post('/medical-records/update/{medicalRecord}', [MedicalRecordController::class, 'update'])->name('medical-record.update');
 Route::post('/medical-records/store', [MedicalRecordController::class, 'store'])->name('medical-record.store');
 
-Route::get('/finance', [PatientController::class, 'index'])->middleware(['auth', 'verified'])->name('finance.index');
+Route::get('/finance', [FinanceController::class, 'index'])->middleware(['auth', 'verified'])->name('finance.index');
 Route::get('/finance/create', [PatientController::class, 'create'])->middleware(['auth', 'verified'])->name('finance.create');
 Route::get('/finance/detail/{finance}', [PatientController::class, 'show'])->middleware(['auth', 'verified'])->name('finance.show');
 Route::get('/finance/edit/{finance}', [PatientController::class, 'edit'])->name('finance.edit');

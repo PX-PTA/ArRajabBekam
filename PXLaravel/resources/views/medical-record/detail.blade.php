@@ -104,15 +104,15 @@
                                             <tbody>
                                                 <tr>
                                                     <td>Biaya Terapis</td>
-                                                    <td>Rp @if($medicalRecord->payment_total != null){{$medicalRecord->total_terapist}}@else 0 @endif</td>
+                                                    <td>Rp @if($medicalRecord->total_terapist != null){{$medicalRecord->total_terapist}}@else 0 @endif</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Biaya Klinik</td>
-                                                    <td>Rp  @if($medicalRecord->payment_total != null){{$medicalRecord->total_clinic}}@else 0 @endif</td>
+                                                    <td>Rp  @if($medicalRecord->total_clinic != null){{$medicalRecord->total_clinic}}@else 0 @endif</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Biaya Herbal</td>
-                                                    <td>Rp  @if($medicalRecord->payment_total != null){{$medicalRecord->total_herbal}}@else 0 @endif</td>
+                                                    <td>Rp  @if($medicalRecord->total_herbal != null){{$medicalRecord->total_herbal}}@else 0 @endif</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>

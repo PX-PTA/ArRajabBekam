@@ -51,7 +51,7 @@ class MedicalRecordController extends Controller
         $newMedicalRecord->blood_pressure_sys = $request->sys;
         $newMedicalRecord->blood_pressure_dia = $request->dia;
         $newMedicalRecord->terapis = $request->terapis;
-        $newMedicalRecord->payment_total = $request->total_payment;
+        $newMedicalRecord->payment_total = $request->r_total_payment;
         $newMedicalRecord->total_clinic = $request->total_clinic;
         $newMedicalRecord->total_terapist = $request->total_terapist;
         $newMedicalRecord->total_herbal = $request->total_herbal;
@@ -62,6 +62,7 @@ class MedicalRecordController extends Controller
                 $newFinance = new Finance();
                 $newFinance->name = "Pengeluaran dari herbal";
                 $newFinance->amount = $request->total_herbal;
+                $newFinance->description = "data dari Rekam medis nomor ".$newMedicalRecord->no;
                 $newFinance->type = 2;
                 $newFinance->save();
             }
@@ -69,6 +70,7 @@ class MedicalRecordController extends Controller
                 $newFinance = new Finance();
                 $newFinance->name = "Pengeluaran dari Terapis";
                 $newFinance->amount = $request->total_terapist;
+                $newFinance->description = "data dari Rekam medis nomor ".$newMedicalRecord->no." Nama Terapis : ".$newMedicalRecord->terapis;
                 $newFinance->type = 2;
                 $newFinance->save();
             }
@@ -76,13 +78,15 @@ class MedicalRecordController extends Controller
                 $newFinance = new Finance();
                 $newFinance->name = "Pemasukan dari Klinik";
                 $newFinance->amount = $request->total_clinic;
+                $newFinance->description = "data dari Rekam medis nomor ".$newMedicalRecord->no;
                 $newFinance->type = 1;
                 $newFinance->save();
             }
         }else{            
             $newFinance = new Finance();
             $newFinance->name = "Pemasukan dari Konsultasi";
-            $newFinance->amount = $request->total_payment;
+            $newFinance->amount = $request->r_total_payment;
+            $newFinance->description = "data dari Rekam medis nomor ".$newMedicalRecord->no;
             $newFinance->type = 1;
             $newFinance->save();
         }

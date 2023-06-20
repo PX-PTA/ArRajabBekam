@@ -92,8 +92,8 @@
                                 <input type="checkbox" id="drop-2">
                                 <ul>
                                     <li class="nav-item ">
-                                        <a class="{{ Route::currentRouteName()=='keuangan/*' ? 'open' : '' }}"
-                                            href="{{route('medical-record.index')}}">
+                                        <a class="{{ Route::currentRouteName()=='finance/*' ? 'open' : '' }}"
+                                            href="{{route('finance.index')}}">
                                             <i class="nav-icon me-2 i-Clock-3"></i>
                                             <span class="item-name">Keuangan</span>
                                         </a>
