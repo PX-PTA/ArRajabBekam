@@ -44,7 +44,7 @@
                                         <p>#{{$medicalRecord->no}}</p>
                                     </div>
                                     <div class="col-md-6 text-sm-end">
-                                        <p><strong>Medical Checkup: </strong> {{date('d M Y', strtotime($medicalRecord->date))}}</p>
+                                        <p><strong>Rekam Medis: </strong> {{date('d M Y', strtotime($medicalRecord->date))}}</p>
                                     </div>
                                 </div>
                                 <div class="mt-3 mb-4 border-top"></div>
@@ -64,6 +64,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
+                                        <h4 class="font-weight-bold">Detail Konsultasi</h4>
                                         <table class="table table-hover mb-4">
                                             <thead class="bg-gray-300">
                                                 <tr>
@@ -87,6 +88,42 @@
                                         <div class="invoice-summary">
                                             <p>Terapis: <span>{{$medicalRecord->terapis}}</span></p>
                                         </div>
+                                    </div>
+                                </div>                                
+                                <div class="mt-3 mb-4 border-top"></div>
+                                <h4 class="font-weight-bold">Total biaya konsultasi</h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table table-hover mb-4">
+                                            <thead class="bg-gray-300">
+                                                <tr>
+                                                    <th scope="col">Rincian</th>
+                                                    <th scope="col">Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Biaya Terapis</td>
+                                                    <td>Rp @if($medicalRecord->payment_total != null){{$medicalRecord->total_terapist}}@else 0 @endif</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Biaya Klinik</td>
+                                                    <td>Rp  @if($medicalRecord->payment_total != null){{$medicalRecord->total_clinic}}@else 0 @endif</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Biaya Herbal</td>
+                                                    <td>Rp  @if($medicalRecord->payment_total != null){{$medicalRecord->total_herbal}}@else 0 @endif</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <th>
+                                                    Total biaya konsultasi
+                                                </th>
+                                                <th>
+                                                    Rp  @if($medicalRecord->payment_total != null){{$medicalRecord->payment_total}}@else 0 @endif
+                                                </th>
+                                            </tfoot>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

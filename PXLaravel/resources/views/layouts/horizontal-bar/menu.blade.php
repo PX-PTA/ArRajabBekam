@@ -32,11 +32,11 @@
                         <div>
                             <div>
                                 <label class="toggle" for="drop-2">
-                                    Patients
+                                    Pasien
                                 </label>
                                 <a href="#">
                                     <i class="nav-icon me-2 i-Bar-Chart"></i>
-                                    Patients
+                                    Pasien
                                 </a>
                                 <input type="checkbox" id="drop-2">
                                 <ul>
@@ -44,7 +44,7 @@
                                         <a class="{{ Route::currentRouteName()=='patient/*' ? 'open' : '' }}"
                                             href="{{route('patient.index')}}">
                                             <i class="nav-icon me-2 i-Clock-3"></i>
-                                            <span class="item-name">Patients</span>
+                                            <span class="item-name">Data Pasien</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -58,11 +58,11 @@
                         <div>
                             <div>
                                 <label class="toggle" for="drop-2">
-                                    Medical Records
+                                    Rekam Medis
                                 </label>
                                 <a href="#">
                                     <i class="nav-icon me-2 i-Bar-Chart"></i>
-                                    Medical Records
+                                    Rekam Medis
                                 </a>
                                 <input type="checkbox" id="drop-2">
                                 <ul>
@@ -70,7 +70,32 @@
                                         <a class="{{ Route::currentRouteName()=='patient/*' ? 'open' : '' }}"
                                             href="{{route('medical-record.index')}}">
                                             <i class="nav-icon me-2 i-Clock-3"></i>
-                                            <span class="item-name">Medical Record</span>
+                                            <span class="item-name">Data Rekam Medis</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="menu float-start">   
+                    <li class="{{ request()->is('patient/*') ? 'active' : '' }}">
+                        <div>
+                            <div>
+                                <label class="toggle" for="drop-2">
+                                    Keuangan
+                                </label>
+                                <a href="#">
+                                    <i class="nav-icon me-2 i-Bar-Chart"></i>
+                                    Data Keuangan
+                                </a>
+                                <input type="checkbox" id="drop-2">
+                                <ul>
+                                    <li class="nav-item ">
+                                        <a class="{{ Route::currentRouteName()=='keuangan/*' ? 'open' : '' }}"
+                                            href="{{route('medical-record.index')}}">
+                                            <i class="nav-icon me-2 i-Clock-3"></i>
+                                            <span class="item-name">Keuangan</span>
                                         </a>
                                     </li>
                                 </ul>

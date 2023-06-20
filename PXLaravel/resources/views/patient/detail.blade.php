@@ -7,10 +7,10 @@
     </x-slot>
     <x-slot name="slot">
         <div class="breadcrumb">
-            <h1>Patient</h1>
+            <h1>Pasien</h1>
             <ul>
-                <li><a href="">Detail Patient</a></li>
-                <li>Patient Name : </li>
+                <li><a href="">Detail Pasien</a></li>
+                <li>Nama Pasien : {{$patient->name}} </li>
             </ul>
         </div>
 
@@ -24,11 +24,13 @@
                     <div class="card-body">
                         <div class="ul-contact-detail__info">
                             <div class="row">
-                                <div class="col-6 text-center">
+                                <div class="col-12 text-center">
                                     <div class="ul-contact-detail__info-1">
                                         <h5>Nama</h5>
                                         <span>{{$patient->name}}</span>
                                     </div>
+                                </div>
+                                <div class="col-6 text-center">
                                     <div onclick="window.location='https://api.whatsapp.com/send?phone={{$patient->phoneNo}}'" class="ul-contact-detail__info-1">
                                         <h5>No Telp. / Wa</h5>
                                         <span>{{$patient->phoneNo}}</span>
@@ -54,6 +56,42 @@
                                         <span>{{$patient->address}}</span>
                                     </div>
                                 </div>
+                                <div class="col-6 text-center">
+                                    <div class="ul-contact-detail__info-1">
+                                        <h5>Riawayat Obat</h5>
+                                        @if($patient->is_on_drugs) 
+                                            ada riwayat
+                                        @else
+                                            Tidak ada Riwayat
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <div class="ul-contact-detail__info-1">
+                                        <h5>Riwayat Operasi</h5>
+                                        @if($patient->is_already_surger) 
+                                            ada riwayat
+                                        @else
+                                            Tidak ada Riwayat
+                                        @endif
+                                    </div>
+                                </div>
+                                @if($patient->is_on_drugs) 
+                                    <div class="col-12 text-center">
+                                        <div class="ul-contact-detail__info-1">
+                                            <h5>Detail Riwayat Obat</h5>
+                                            <span>{{$patient->drug_details}}</span>
+                                        </div>
+                                    </div>
+                                @endif
+                                @if($patient->is_already_surger) 
+                                    <div class="col-12 text-center">
+                                        <div class="ul-contact-detail__info-1">
+                                            <h5>Detail Riwayat Operasi</h5>
+                                            <span>{{$patient->surgery_details}}</span>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -70,9 +108,9 @@
                                 <i class="nav-icon i-Gear-2"></i>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_table2">
-                                <a class="dropdown-item" href="{{route('medical-record.create',$patient->id)}}">Add new Medical Record</a>
-                                <a class="dropdown-item" href="{{route('patient.edit',$patient->id)}}">Edit Patient</a>
-                                <a class="dropdown-item" href="{{route('patient.print',$patient->id)}}">Print Medical Checkup</a>
+                                <a class="dropdown-item" href="{{route('medical-record.create',$patient->id)}}">Tambah Rekam Medis</a>
+                                <a class="dropdown-item" href="{{route('patient.edit',$patient->id)}}">Edit Pasien</a>
+                                <a class="dropdown-item" href="{{route('patient.print',$patient->id)}}">Print Rekam Medis Pasien</a>
                             </div>
                         </div>
                     </div>
@@ -95,7 +133,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="ul-contact-detail__right-timeline">
-                                                            <a  class="ul-widget4__title d-block">Medical Record No : {{$medicalRecord->no}} </a>
+                                                            <a  class="ul-widget4__title d-block">No Rekam Medis : {{$medicalRecord->no}} </a>
                                                             <small class="text-mute">{{$medicalRecord->date}}</small>
                                                             <p>Keluhan : {{$medicalRecord->complaint}}</p>
                                                         </div>
@@ -108,7 +146,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="ul-contact-detail__right-timeline">
-                                                            <a  class="ul-widget4__title d-block">belum ada jejak medical </a>
+                                                            <a  class="ul-widget4__title d-block">belum ada rekam medical </a>
                                                         </div>
                                                     </div>
                                                 </div>

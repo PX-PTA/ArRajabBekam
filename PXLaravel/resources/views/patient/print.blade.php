@@ -67,8 +67,8 @@
     <h3 width="100%" align="center" >REKAM MEDIK KLIEN AR-RAJAB BEKAM</h3>
     <p>
         Riwayat Penyakit<br>
-        Riwayat Operasi : (Ya/Tida) Operasi <br>
-        Riwayat Konsumsi Obat/Tidak Konsumsi Obat.
+        Riwayat Operasi : (@if($patient->is_already_surgery) Ya @else Tidak @endif) Operasi. @if($patient->is_already_surgery) {{$patient->surgery_details}} @endif<br>
+        Riwayat Obat :@if($patient->is_on_drugs) Konsumsi Obat @else Tidak Konsumsi Obat. @endif @if($patient->is_on_drugs) {{$patient->drug_details}}. @endif
     </p>
     <table class="tableRekam" width="100%">
         <tr>

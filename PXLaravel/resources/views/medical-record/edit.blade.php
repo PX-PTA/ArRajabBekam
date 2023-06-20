@@ -117,7 +117,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>   
                                         <div class="card-footer">
                                             <div class="mc-footer">
                                                 <div class="row text-end">

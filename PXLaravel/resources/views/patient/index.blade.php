@@ -66,7 +66,7 @@
                                         </td>
                                         <td onclick="window.location.href='{{route('patient.show',$patients->id)}}'">
                                              @if($patients->lastMedicalRecords()->count() > 0) 
-                                             {{date('d M Y', strtotime($patients->lastMedicalRecords()->first()->date))}}
+                                             {{date('d-M-Y', strtotime($patients->lastMedicalRecords()->first()->date))}}
                                              @else 
                                                 belum ada Rekam medis
                                              @endif

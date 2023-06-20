@@ -43,7 +43,7 @@
                                     @foreach($medicalRecordData as $medicalRecord)
                                     <tr>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->no}}</td>
-                                        <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{date('d M Y', strtotime($medicalRecord->date))}}</td>
+                                        <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{date('d-M-Y', strtotime($medicalRecord->date))}}</td>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->patient->name}}</td>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->terapis}}</td>
                                         <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->action}}</td>

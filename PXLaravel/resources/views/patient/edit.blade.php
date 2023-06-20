@@ -1,9 +1,9 @@
 <x-app-layout>
     <x-slot name="slot">
         <div class="breadcrumb">
-            <h1>Patient</h1>
+            <h1>Pasien</h1>
             <ul>
-                <li><a href="">Create New Patient</a></li>
+                <li><a href="">Edit Data Pasien</a></li>
                 <li>Patient Data</li>
             </ul>
         </div>
@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <div class="card o-hidden mb-4">
                     <div class="card-header">
-                        <h3 class="w-50 float-start card-title m-0">New Patient</h3>
+                        <h3 class="w-50 float-start card-title m-0">Edit Data Pasiens</h3>
                     </div>
                     <div class="card-body">
                         <!-- begin::main-row -->

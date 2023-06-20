@@ -43,21 +43,29 @@ Route::get('/users/{id}', [UsersController::class, 'detail'])->middleware(['auth
 
 Route::get('/patient', [PatientController::class, 'index'])->middleware(['auth', 'verified'])->name('patient.index');
 Route::get('/patient/create', [PatientController::class, 'create'])->middleware(['auth', 'verified'])->name('patient.create');
-Route::post('/patient/store', [PatientController::class, 'store'])->name('patient.store');
 Route::get('/patient/detail/{patient}', [PatientController::class, 'show'])->middleware(['auth', 'verified'])->name('patient.show');
 Route::get('/patient/print/{patient}', [PatientController::class, 'print'])->middleware(['auth', 'verified'])->name('patient.print');
 Route::get('/patient/{patient}/medical-records', [PatientController::class, 'detail-medical'])->middleware(['auth', 'verified'])->name('patient.detail-medical');
 Route::get('/patient/edit/{patient}', [PatientController::class, 'edit'])->name('patient.edit');
 Route::get('/patient/destroy/{patient}', [PatientController::class, 'destroy'])->name('patient.destroy');
 Route::post('/patient/update/{patient}', [PatientController::class, 'update'])->name('patient.update');
+Route::post('/patient/store', [PatientController::class, 'store'])->name('patient.store');
 
 Route::get('/medical-records', [MedicalRecordController::class, 'index'])->middleware(['auth', 'verified'])->name('medical-record.index');
 Route::get('/medical-records/create/{curPat?}', [MedicalRecordController::class, 'create'])->middleware(['auth', 'verified'])->name('medical-record.create');
 Route::get('/medical-records/{medicalRecord}', [MedicalRecordController::class, 'show'])->middleware(['auth', 'verified'])->name('medical-record.show');
-Route::post('/medical-records/store', [MedicalRecordController::class, 'store'])->name('medical-record.store');
 Route::get('/medical-records/edit/{medicalRecord}', [MedicalRecordController::class, 'edit'])->name('medical-record.edit');
 Route::get('/medical-records/destroy/{medicalRecord}', [MedicalRecordController::class, 'destroy'])->name('medical-record.destroy');
 Route::post('/medical-records/update/{medicalRecord}', [MedicalRecordController::class, 'update'])->name('medical-record.update');
+Route::post('/medical-records/store', [MedicalRecordController::class, 'store'])->name('medical-record.store');
+
+Route::get('/finance', [PatientController::class, 'index'])->middleware(['auth', 'verified'])->name('finance.index');
+Route::get('/finance/create', [PatientController::class, 'create'])->middleware(['auth', 'verified'])->name('finance.create');
+Route::get('/finance/detail/{finance}', [PatientController::class, 'show'])->middleware(['auth', 'verified'])->name('finance.show');
+Route::get('/finance/edit/{finance}', [PatientController::class, 'edit'])->name('finance.edit');
+Route::get('/finance/destroy/{finance}', [PatientController::class, 'destroy'])->name('finance.destroy');
+Route::post('/finance/update/{finance}', [PatientController::class, 'update'])->name('finance.update');
+Route::post('/finance/store', [PatientController::class, 'store'])->name('finance.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

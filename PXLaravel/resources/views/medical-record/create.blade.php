@@ -121,9 +121,32 @@
                                         <div class="form-group row">
                                             <div class="row">
                                                 <div class="col-md-12 form-group mb-3">
-                                                    <label for="total_payment">Biaya Konsultasi</label>
-                                                    <input type="number" class="form-control" id="total_payment" name="total_payment"
-                                                        placeholder="Biaya konsultasi">
+                                                    <label for="total_payment">Biaya Herbal</label>
+                                                    <input type="number" class="form-control" id="total_herbal" name="total_herbal"
+                                                        placeholder="Biaya Herbals" value="0" onkeyup="payment()">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-group mb-3">
+                                                    <label for="total_payment">Biaya Terapis</label>
+                                                    <input type="number" class="form-control" id="total_terapist" name="total_terapist"
+                                                        placeholder="Biaya Terapis" value="0" onkeyup="payment()">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-group mb-3">
+                                                    <label for="total_payment">Biaya klinik</label>
+                                                    <input type="number" class="form-control" id="total_clinic" name="total_clinic"
+                                                        placeholder="Biaya klinik" value="0" onkeyup="payment()">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-group mb-3">
+                                                    <label for="total_payment">Total Konsultasi</label>
+                                                    <input  type="number" class="form-control" id="f_total_payment" name="f_total_payment"
+                                                        placeholder="Biaya konsultasi" value="0">
+                                                    <input  type="hidden" class="form-control" id="r_total_payment" name="r_total_payment"
+                                                            placeholder="Biaya konsultasi" value="0">
                                                 </div>
                                             </div>
                                         </div>
@@ -160,6 +183,30 @@
     <x-slot name="bottomjs">
         <script src="{{asset('assets/js/form.basic.script.js')}}"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+            function payment() {
+                let w = document.getElementById("total_herbal");
+                let x = document.getElementById("total_terapist");
+                let y = document.getElementById("total_clinic");
+                let z = document.getElementById("r_total_payment");
+                let z1 = document.getElementById("f_total_payment");
+                let v = 0;
+                let w1 = Number(w.value);
+                let x1 = Number(x.value);
+                let y1 = Number(y.value);
+                
+                if(w1 > 0 || x1 > 0 || y1 > 0){
+                    v = Number(w1+x1+y1);
+                    z1.disabled = true;
+                }else{
+                    v = Number(0);
+                    z1.disabled = false;
+                }
+
+                z1.value = v;
+                z.value = v;
+            }
+            </script>
         <script>
         $(function() {            
             var availableTags = [

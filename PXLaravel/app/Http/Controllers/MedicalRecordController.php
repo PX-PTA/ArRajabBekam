@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MedicalRecord;
+use App\Models\Finance;
 use App\Models\Patient;
 use App\Http\Requests\StoreMedicalRecordRequest;
 use App\Http\Requests\UpdateMedicalRecordRequest;
@@ -50,7 +51,41 @@ class MedicalRecordController extends Controller
         $newMedicalRecord->blood_pressure_sys = $request->sys;
         $newMedicalRecord->blood_pressure_dia = $request->dia;
         $newMedicalRecord->terapis = $request->terapis;
+        $newMedicalRecord->payment_total = $request->total_payment;
+        $newMedicalRecord->total_clinic = $request->total_clinic;
+        $newMedicalRecord->total_terapist = $request->total_terapist;
+        $newMedicalRecord->total_herbal = $request->total_herbal;
         $newMedicalRecord->save();
+
+        if($request->total_herbal > 0 || $request->total_terapist > 0 || $request->total_clinic > 0 ){            
+            if($request->total_herbal > 0){
+                $newFinance = new Finance();
+                $newFinance->name = "Pengeluaran dari herbal";
+                $newFinance->amount = $request->total_herbal;
+                $newFinance->type = 2;
+                $newFinance->save();
+            }
+            if($request->total_terapist > 0){
+                $newFinance = new Finance();
+                $newFinance->name = "Pengeluaran dari Terapis";
+                $newFinance->amount = $request->total_terapist;
+                $newFinance->type = 2;
+                $newFinance->save();
+            }
+            if($request->total_clinic > 0){
+                $newFinance = new Finance();
+                $newFinance->name = "Pemasukan dari Klinik";
+                $newFinance->amount = $request->total_clinic;
+                $newFinance->type = 1;
+                $newFinance->save();
+            }
+        }else{            
+            $newFinance = new Finance();
+            $newFinance->name = "Pemasukan dari Konsultasi";
+            $newFinance->amount = $request->total_payment;
+            $newFinance->type = 1;
+            $newFinance->save();
+        }
 
         return redirect()->route("medical-record.show", $newMedicalRecord->id);
         //
@@ -93,6 +128,10 @@ class MedicalRecordController extends Controller
         $medicalRecord->blood_pressure_sys = $request->sys;
         $medicalRecord->blood_pressure_dia = $request->dia;
         $medicalRecord->terapis = $request->terapis;
+        $medicalRecord->total_payment = $request->total_payment;
+        $medicalRecord->total_clinic = $request->total_clinic;
+        $medicalRecord->total_terapist = $request->total_terapist;
+        $medicalRecord->total_herbal = $request->total_herbal;
         $medicalRecord->save();
 
         return redirect()->route("medical-record.show", $medicalRecord->id);

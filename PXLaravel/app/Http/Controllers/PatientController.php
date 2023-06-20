@@ -42,6 +42,8 @@ class PatientController extends Controller
         $newPatien->age = $request->age;
         $newPatien->is_already_surgery = $request->is_already_surgery == "on" ? true:false ;
         $newPatien->is_on_drugs = $request->is_on_drugs == "on" ? true:false;
+        $newPatien->surgery_details = $request->surgery_details;
+        $newPatien->drug_details = $request->drug_details;
         $newPatien->save();
         return redirect()->route('patient.show',$newPatien->id);
     }
@@ -84,6 +86,8 @@ class PatientController extends Controller
         $patient->age = $request->age;
         $patient->is_already_surgery = $request->is_already_surgery == "on" ? true:false ;
         $patient->is_on_drugs = $request->is_on_drugs == "on" ? true:false;
+        $patient->surgery_details = $request->surgery_details;
+        $patient->drug_details = $request->drug_details;
         $patient->save();
         return redirect()->route('patient.show',$patient->id);
     }
