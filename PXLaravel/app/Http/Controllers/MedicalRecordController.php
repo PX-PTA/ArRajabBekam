@@ -9,6 +9,7 @@ use App\Http\Requests\StoreMedicalRecordRequest;
 use App\Http\Requests\UpdateMedicalRecordRequest;
 use Yajra\DataTables\CollectionDataTable;
 use Yajra\DataTables\DataTables;
+use Carbon\Carbon;
 
 class MedicalRecordController extends Controller
 {
@@ -51,43 +52,69 @@ class MedicalRecordController extends Controller
         $newMedicalRecord->blood_pressure_sys = $request->sys;
         $newMedicalRecord->blood_pressure_dia = $request->dia;
         $newMedicalRecord->terapis = $request->terapis;
-        $newMedicalRecord->payment_total = $request->r_total_payment;
+        if($request->r_total_payment > 0){
+            $newMedicalRecord->payment_total = $request->r_total_payment;
+        }else{
+            $newMedicalRecord->payment_total = $request->f_total_payment;
+        }
+        
         $newMedicalRecord->total_clinic = $request->total_clinic;
         $newMedicalRecord->total_terapist = $request->total_terapist;
         $newMedicalRecord->total_herbal = $request->total_herbal;
         $newMedicalRecord->save();
 
-        if($request->total_herbal > 0 || $request->total_terapist > 0 || $request->total_clinic > 0 ){            
+        if($request->total_herbal > 0 || $request->total_terapist > 0 || $request->total_clinic > 0 ){         
+            $newFinance = new Finance();
+            $newFinance->name = "Pemasukan Dari Konsultasi - Total Klinik";
+            $newFinance->amount = $request->r_total_payment - $request->total_clinic;
+            $newFinance->description = "data dari Rekam medis nomor ".$newMedicalRecord->no;
+            $newFinance->type = 1;
+            $newFinance->finance_code = "A01";
+            $newFinance->medical_record_id = $newMedicalRecord->id;
+            $newFinance->finance_date = Carbon::now();
+            $newFinance->save();
             if($request->total_herbal > 0){
                 $newFinance = new Finance();
-                $newFinance->name = "Pengeluaran dari herbal";
+                $newFinance->name = "Pengeluaran dari biaya herbal";
                 $newFinance->amount = $request->total_herbal;
                 $newFinance->description = "data dari Rekam medis nomor ".$newMedicalRecord->no;
                 $newFinance->type = 2;
+                $newFinance->finance_code = "B01";
+                $newFinance->medical_record_id = $newMedicalRecord->id;
+                $newFinance->finance_date = Carbon::now();
                 $newFinance->save();
             }
             if($request->total_terapist > 0){
                 $newFinance = new Finance();
-                $newFinance->name = "Pengeluaran dari Terapis";
+                $newFinance->name = "Pengeluaran dari biaya Terapis";
                 $newFinance->amount = $request->total_terapist;
                 $newFinance->description = "data dari Rekam medis nomor ".$newMedicalRecord->no." Nama Terapis : ".$newMedicalRecord->terapis;
                 $newFinance->type = 2;
+                $newFinance->finance_code = "B02";
+                $newFinance->medical_record_id = $newMedicalRecord->id;
+                $newFinance->finance_date = Carbon::now();
                 $newFinance->save();
             }
             if($request->total_clinic > 0){
                 $newFinance = new Finance();
-                $newFinance->name = "Pemasukan dari Klinik";
+                $newFinance->name = "Pemasukan dari biaya Klinik";
                 $newFinance->amount = $request->total_clinic;
                 $newFinance->description = "data dari Rekam medis nomor ".$newMedicalRecord->no;
                 $newFinance->type = 1;
+                $newFinance->finance_code = "A02";
+                $newFinance->medical_record_id = $newMedicalRecord->id;
+                $newFinance->finance_date = Carbon::now();
                 $newFinance->save();
             }
-        }else{            
+        }else if($request->f_total_payment > 0) {            
             $newFinance = new Finance();
             $newFinance->name = "Pemasukan dari Konsultasi";
-            $newFinance->amount = $request->r_total_payment;
+            $newFinance->amount = $request->f_total_payment;
             $newFinance->description = "data dari Rekam medis nomor ".$newMedicalRecord->no;
             $newFinance->type = 1;
+            $newFinance->finance_code = "A01";
+            $newFinance->medical_record_id = $newMedicalRecord->id;
+            $newFinance->finance_date = Carbon::now();
             $newFinance->save();
         }
 

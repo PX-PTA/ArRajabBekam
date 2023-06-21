@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Finance;
-use App\Models\Patient;
+use App\Models\MedicalRecord;
 use App\Http\Requests\StorefinanceRequest;
 use App\Http\Requests\UpdatefinanceRequest;
+use Carbon\Carbon;
 
 class FinanceController extends Controller
 {
@@ -14,25 +15,46 @@ class FinanceController extends Controller
      */
     public function index()
     {
-        $finaces = Finance::all();
+        $finaces = Finance::orderBy("created_at","asc")->get();
+        $allDataIncome = Finance::get()->where('type',1)->sum('amount');
+        $allDataOutcome = Finance::get()->where('type',2)->sum('amount');
+
         return view('finance.index')
-        ->with('    ', $finaces);
+        ->with('financeData', $finaces)
+        ->with('financeIncome', $allDataIncome)
+        ->with('financeOutcome', $allDataOutcome);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(MedicalRecord $curMedical = null)
     {
-        //
+        return view('finance.create')
+        ->with('curentMedical', $curMedical);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorefinanceRequest $request)
+    public function store(StorefinanceRequest $request,MedicalRecord $curMedical = null)
     {
-        //
+        $newFinance = new Finance();
+        $newFinance->name = $request->name;
+        $newFinance->amount = $request->amount;
+        $newFinance->description = $request->description;
+        $newFinance->type = $request->type;
+        $newFinance->finance_code = $request->finance_code;
+        if($curMedical != null){
+            $newFinance->medical_record_id = $curMedical->id;
+        }
+        $newFinance->finance_date = Carbon::now();
+        $newFinance->save();
+        if($curMedical != null){
+            return redirect()->route("medical-checkup.detail",$curMedical->id);
+            
+        }
+        return redirect()->route("finance.index");
     }
 
     /**

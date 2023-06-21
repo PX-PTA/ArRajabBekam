@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\MedicalRecord;
 use App\Models\Patient;
+use App\Models\Finance;
 use Carbon\Carbon;
 
 class DashboardController extends Controller
@@ -24,11 +25,12 @@ class DashboardController extends Controller
         $medicalRecordMonth = MedicalRecord::whereMonth(
             'created_at', '=', Carbon::now()->subMonth()->month
         )->count();
-        $medicalRecordPaymentToday = MedicalRecord::whereDate('created_at', Carbon::today())->sum('payment_total');
-        $medicalRecordPayment = MedicalRecord::sum('payment_total');
-        $medicalRecordPaymentMonth = MedicalRecord::whereMonth(
-            'created_at', '=', Carbon::now()->subMonth()->month
-        )->sum('payment_total');
+        $medicalRecordPaymentToday = Finance::where('type',1)->whereDate('finance_date', Carbon::today())->sum('amount');
+        $medicalRecordPayment = Finance::where('type',1)->whereDate('finance_date', Carbon::today())->sum('amount');
+        $medicalRecordPaymentMonth = Finance::where('type',1)->
+        whereMonth(
+            'finance_date', '=', Carbon::now()->month
+        )->sum('amount');
         $medicalRecordDataToday = MedicalRecord::whereDate('created_at', Carbon::today())->get();
         $patientDataToday = Patient::whereDate('created_at', Carbon::today())->get();
 

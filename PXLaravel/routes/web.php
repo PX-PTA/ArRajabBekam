@@ -61,12 +61,9 @@ Route::post('/medical-records/update/{medicalRecord}', [MedicalRecordController:
 Route::post('/medical-records/store', [MedicalRecordController::class, 'store'])->name('medical-record.store');
 
 Route::get('/finance', [FinanceController::class, 'index'])->middleware(['auth', 'verified'])->name('finance.index');
-Route::get('/finance/create', [PatientController::class, 'create'])->middleware(['auth', 'verified'])->name('finance.create');
-Route::get('/finance/detail/{finance}', [PatientController::class, 'show'])->middleware(['auth', 'verified'])->name('finance.show');
-Route::get('/finance/edit/{finance}', [PatientController::class, 'edit'])->name('finance.edit');
-Route::get('/finance/destroy/{finance}', [PatientController::class, 'destroy'])->name('finance.destroy');
-Route::post('/finance/update/{finance}', [PatientController::class, 'update'])->name('finance.update');
-Route::post('/finance/store', [PatientController::class, 'store'])->name('finance.store');
+Route::get('/finance/create/{curMedical?}', [FinanceController::class, 'create'])->middleware(['auth', 'verified'])->name('finance.create');
+//Route::get('/finance/detail/{finance}', [PatientController::class, 'show'])->middleware(['auth', 'verified'])->name('finance.show');
+Route::post('/finance/store/{curMedical?}', [FinanceController::class, 'store'])->name('finance.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

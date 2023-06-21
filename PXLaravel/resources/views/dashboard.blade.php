@@ -36,7 +36,7 @@
                             <div class="card-body text-center">
                                 <i class="i-Money-2"></i>         
                                 <p class="text-muted mt-2 mb-2">Total Pembayaran</p>
-                                <p class="text-primary text-24 line-height-1 m-0">Rp {{ $medicalRecordPaymentToday }} </p>
+                                <p class="text-primary text-24 line-height-1 m-0">Rp {{ $medicalRecordPayment }} </p>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                                         </tr>
                                         <tr>
                                             <td>Jumlah Biaya Konsultasi</td>
-                                            <td class="font-weight-bold  text-success">Rp {!! $medicalRecordPaymentMonth !!}</td>
+                                            <td class="font-weight-bold  text-success">Rp {{ $medicalRecordPaymentMonth }}</td>
                                         </tr>
                                     </tbody>
                                 </table>

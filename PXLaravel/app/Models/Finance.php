@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Finance extends Model
 {
     use HasFactory;
+    public function medicalCheckup(): BelongsTo
+    {
+        return $this->belongsTo(MedicalRecord::class);
+    }
 }
