@@ -159,10 +159,6 @@ class MedicalRecordController extends Controller
         $medicalRecord->blood_pressure_sys = $request->sys;
         $medicalRecord->blood_pressure_dia = $request->dia;
         $medicalRecord->terapis = $request->terapis;
-        $medicalRecord->total_payment = $request->total_payment;
-        $medicalRecord->total_clinic = $request->total_clinic;
-        $medicalRecord->total_terapist = $request->total_terapist;
-        $medicalRecord->total_herbal = $request->total_herbal;
         $medicalRecord->save();
 
         return redirect()->route("medical-record.show", $medicalRecord->id);

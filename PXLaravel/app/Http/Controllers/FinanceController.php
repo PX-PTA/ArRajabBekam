@@ -51,7 +51,7 @@ class FinanceController extends Controller
         $newFinance->finance_date = Carbon::now();
         $newFinance->save();
         if($curMedical != null){
-            return redirect()->route("medical-checkup.detail",$curMedical->id);
+            return redirect()->route('medical-record.show',$curMedical->id);
             
         }
         return redirect()->route("finance.index");
