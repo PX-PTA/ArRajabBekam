@@ -25,7 +25,7 @@ return new class extends Migration
         {
             Schema::table('finances', function (Blueprint $table)
             {
-                $table->dropForeign(['finance_date']);
+                $table->dropColumn(['finance_date']);
             });
         }
     }
