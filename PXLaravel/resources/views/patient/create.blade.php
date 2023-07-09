@@ -1,15 +1,5 @@
 <x-app-layout>
     <x-slot name="slot">
-        <div class="breadcrumb">
-            <h1>Pasien</h1>
-            <ul>
-                <li><a href="">Buat Pasien baru</a></li>
-                <li>Data Pasien</li>
-            </ul>
-        </div>
-
-        <div class="separator-breadcrumb border-top"></div>
-        {{-- end of breadcrumb --}}
         <div class="row">
             <div class="col-md-12">
                 <div class="card o-hidden mb-4">

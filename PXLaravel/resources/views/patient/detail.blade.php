@@ -6,16 +6,6 @@
 
     </x-slot>
     <x-slot name="slot">
-        <div class="breadcrumb">
-            <h1>Pasien</h1>
-            <ul>
-                <li><a href="">Detail Pasien</a></li>
-                <li>Nama Pasien : {{$patient->name}} </li>
-            </ul>
-        </div>
-
-        <div class="separator-breadcrumb border-top"></div>
-        {{-- end of breadcrumb --}}
         <div class="row">
             <div class="col-lg-4 col-xl-4">
                 <div class="card">
