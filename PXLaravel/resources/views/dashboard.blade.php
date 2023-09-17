@@ -75,7 +75,12 @@
                     <div class="card-body">
                         <div class="card-title">Rekapan Bulan Lalu - {{ Carbon\Carbon::now()->subMonth()->format("M") }}</div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-9 mb-4">        
+                                <label for="picker1">Bulan Transaksi</label>
+                                <input class="form-control" type="month" id="start" name="start"
+                                       min="2023-01" value="2023-{{ Carbon\Carbon::now()->subMonth()->format("m") }}">
+                            </div>
+                            <div class="col-md-12">                          
                                 <table class="table">
                                     <thead class="card-header">
                                         <tr>
