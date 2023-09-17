@@ -77,8 +77,10 @@
                         <div class="row">
                             <div class="col-md-9 mb-4">        
                                 <label for="picker1">Bulan Transaksi</label>
-                                <input class="form-control" type="month" id="start" name="start"
-                                       min="2023-01" value="2023-{{ Carbon\Carbon::now()->subMonth()->format("m") }}">
+                                <input class="form-control" type="month" id="monthlyTransaction" name="monthlyTransaction"
+                                       min="2023-01" value="2023-{{ Carbon\Carbon::now()->subMonth()->format("m") }}" 
+                                       onchange="myFunction()"
+                                       >
                             </div>
                             <div class="col-md-12">                          
                                 <table class="table">
@@ -91,15 +93,15 @@
                                     <tbody>
                                         <tr>
                                             <td>Pasien</td>
-                                            <td class="font-weight-bold text-success">{!! $patientMonth !!}</td>
+                                            <td id="monthlyPasient" class="font-weight-bold text-success">{!! $patientMonth !!}</td>
                                         </tr>
                                         <tr>
                                             <td>Jumlah Rekam Medis</td>
-                                            <td class="font-weight-bold  text-success">{!! $medicalRecordMonth !!}</td>
+                                            <td id="monthlyMedicalRecord" class="font-weight-bold  text-success">{!! $medicalRecordMonth !!}</td>
                                         </tr>
                                         <tr>
                                             <td>Jumlah Biaya Konsultasi</td>
-                                            <td class="font-weight-bold  text-success">Rp {{ $medicalRecordPaymentMonth }}</td>
+                                            <td id="monthlyMedicalPayment" class="font-weight-bold  text-success">Rp {{ $medicalRecordPaymentMonth }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -217,5 +219,19 @@
     <x-slot name="pagecss">
     </x-slot>
     <x-slot name="bottomjs">
+        <script>
+            function myFunction() {
+                var x = document.getElementById("monthlyTransaction").value;
+                var y = x.split('-');
+                var monthlyPasient = document.getElementById("monthlyPasient");
+                var monthlyMedicalRecord = document.getElementById("monthlyMedicalRecord");
+                var monthlyMedicalPayment = document.getElementById("monthlyMedicalPayment");
+                $.getJSON('http://127.0.0.1:8000/api/data/monthly/'+y[1]+'/'+y[0], function(data) {
+                    monthlyPasient.innerText = data.monthlyPatient;
+                    monthlyMedicalRecord.innerText = data.monthlyMedical ;
+                    monthlyMedicalPayment.innerText = data.monthlyPayment ;
+                })
+            }
+        </script>
     </x-slot>
 </x-app-layout>
