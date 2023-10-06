@@ -8,7 +8,24 @@
             </ul>
         </div>
         <div class="separator-breadcrumb border-top"></div>
-
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card card-icon mb-4">
+                            <div class="card-body text-center">
+                                Notifikasi member yang sudah lama tidak terapi<br>
+                                @foreach($patientReminder as $patientx)
+                                    @if($patientx->phoneNo)
+                                    <a href="https://wa.me/{{$patientx->phoneNo}}">{{$patientx->name}}, No Telp : {{$patientx->phoneNo}},  Address : {{$patientx->address}}</a><br>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-7 col-md-12">
                 <!-- CARD ICON -->
