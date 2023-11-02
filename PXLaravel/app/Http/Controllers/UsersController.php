@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Users;
+use App\Models\Patient;
 use App\Http\Requests\StoreUsersRequest;
 use App\Http\Requests\UpdateUsersRequest;
 use App\DataTables\UsersDataTable;
+use Carbon\Carbon;
 
 class UsersController extends Controller
 {
@@ -22,6 +24,18 @@ class UsersController extends Controller
      */
     public function create()
     {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function notify(Patient $patient)
+    {
+        $patient->notify_date = Carbon::now();
+        $patient->save();
+       // echo 'https://wa.me/'.$patient->phoneNo;
+        return redirect('https://wa.me/0'.$patient->phoneNo);
         //
     }
 

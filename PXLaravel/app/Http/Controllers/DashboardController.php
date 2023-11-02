@@ -38,15 +38,17 @@ class DashboardController extends Controller
 
         foreach($patient as $patientA){
             $getMedicalRecord = MedicalRecord::where('patient_id',$patientA->id)->latest('created_at')->first();
-            if($getMedicalRecord != null)
-            {
-                if($getMedicalRecord->created_at < Carbon::now()->addMonth(-1)){
+            if($patientA->notify_date < Carbon::now()->addMonth(-1)){
+                if($getMedicalRecord != null)
+                {
+                    if( $getMedicalRecord->created_at < Carbon::now()->addMonth(-1)){
+                        array_push($patientReminder,$patientA);
+                    }            
+                }
+                else
+                {
                     array_push($patientReminder,$patientA);
-                }            
-            }
-            else
-            {
-                array_push($patientReminder,$patientA);
+                }
             }
         }              
 

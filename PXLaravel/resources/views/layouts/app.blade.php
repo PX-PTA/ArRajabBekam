@@ -73,6 +73,7 @@
     <script src="{{ asset('assets/js/common-bundle-script.js') }}"></script>
     {{-- page specific javascript --}}
 
+    
     {{ $pagejs }}
     <script src="{{ asset('assets/js/script.js') }}"></script>
 

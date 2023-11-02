@@ -41,6 +41,7 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(
 Route::get('/users', [UsersController::class, 'index'])->middleware(['auth', 'verified'])->name('users.index');
 Route::get('/users/create', [UsersController::class, 'create'])->middleware(['auth', 'verified'])->name('users.create');
 Route::get('/users/{id}', [UsersController::class, 'detail'])->middleware(['auth', 'verified'])->name('users.detail');
+Route::get('/patient/notify/{patient}', [UsersController::class, 'notify'])->middleware(['auth', 'verified'])->name('user.notify');
 
 Route::get('/patient', [PatientController::class, 'index'])->middleware(['auth', 'verified'])->name('patient.index');
 Route::get('/patient/create', [PatientController::class, 'create'])->middleware(['auth', 'verified'])->name('patient.create');

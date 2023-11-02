@@ -8,6 +8,7 @@
             </ul>
         </div>
         <div class="separator-breadcrumb border-top"></div>
+        @if(!$patientReminder)
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="row">
@@ -17,7 +18,7 @@
                                 Notifikasi member yang sudah lama tidak terapi<br>
                                 @foreach($patientReminder as $patientx)
                                     @if($patientx->phoneNo)
-                                    <a href="https://wa.me/{{$patientx->phoneNo}}">{{$patientx->name}}, No Telp : {{$patientx->phoneNo}},  Address : {{$patientx->address}}</a><br>
+                                    <a href="{{route('user.notify',$patientx->id)}}">{{$patientx->name}}, No Telp : {{$patientx->phoneNo}},  Address : {{$patientx->address}}</a><br>
                                     @endif
                                 @endforeach
                             </div>
@@ -26,6 +27,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <div class="row">
             <div class="col-lg-7 col-md-12">
                 <!-- CARD ICON -->
