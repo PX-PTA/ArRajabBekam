@@ -14,10 +14,10 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      */
-     public function index(UsersDataTable $dataTable)
-     {
-         return $dataTable->render('users.index');
-     }
+    public function index(UsersDataTable $dataTable)
+    {
+        return $dataTable->render('users.index');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -34,8 +34,8 @@ class UsersController extends Controller
     {
         $patient->notify_date = Carbon::now();
         $patient->save();
-       // echo 'https://wa.me/'.$patient->phoneNo;
-        return redirect('https://wa.me/0'.$patient->phoneNo);
+        // echo 'https://wa.me/'.$patient->phoneNo;
+        return redirect('https://wa.me/0' . $patient->phoneNo);
         //
     }
 

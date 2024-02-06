@@ -49,6 +49,8 @@ class MedicalRecordController extends Controller
         $newMedicalRecord->diagnosis = $request->diagnosis;
         $newMedicalRecord->action = $request->action;
         $newMedicalRecord->medicine = $request->medicine;
+        $newMedicalRecord->height = $request->height;
+        $newMedicalRecord->weight = $request->weight;
         $newMedicalRecord->blood_pressure_sys = $request->sys;
         $newMedicalRecord->blood_pressure_dia = $request->dia;
         $newMedicalRecord->terapis = $request->terapis;
@@ -158,6 +160,8 @@ class MedicalRecordController extends Controller
         $medicalRecord->medicine = $request->medicine;
         $medicalRecord->blood_pressure_sys = $request->sys;
         $medicalRecord->blood_pressure_dia = $request->dia;
+        $medicalRecord->height = $request->height;
+        $medicalRecord->weight = $request->weight;
         $medicalRecord->terapis = $request->terapis;
         $medicalRecord->save();
 

@@ -20,7 +20,7 @@
                             <div class="auth-logo text-center mb-4">
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="">
                             </div>
-                            <h1 class="mb-3 text-center text-18">Sign In Here!</h1>                            
+                            <h1 class="mb-3 text-center text-18">Login Di Sini!</h1>                            
                             <button onclick="window.location.href='{{route('login')}}'" class="btn btn-rounded btn-primary w-100 mt-2">Sign In</button>
                         </div>
                     </div>
@@ -28,9 +28,7 @@
             </div>
         </div>
     </div>
-
     <script src="{{ asset('assets/js/common-bundle-script.js') }}"></script>
-
     <script src="{{ asset('assets/js/script.js') }}"></script>
 </body>
 

@@ -52,6 +52,18 @@
                                                         type="number" placeholder="Input Usia" min="0"
                                                         max="100">
                                                 </div>
+
+                                                <div class="col-md-6 form-group mb-3">
+                                                    <label for="website">Berat Badan (Kg)</label>
+                                                    <input class="form-control" id="job" name="weight"
+                                                        placeholder="Input Berat Badan">
+                                                </div>
+
+                                                <div class="col-md-6 form-group mb-3">
+                                                    <label for="website">Tinggi Badan (cm)</label>
+                                                    <input class="form-control" id="job" name="height"
+                                                        placeholder="Input Tinggi Badan">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group row mt-4">

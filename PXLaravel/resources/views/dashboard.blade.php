@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="slot">
         <div class="breadcrumb">
-            <h1>AR Rajab Bekam</h1>
+            <h1>{{ config('app.name', 'Laravel') }}</h1>
             <ul>
                 <li><a href="">Dashboard</a></li>
                 <li>Dashboard</li>
@@ -151,9 +151,7 @@
 
                     </div>
                     <div class="card-body">
-
                         <div class="table-responsive">
-
                             <table id="user_table" class=" table table-bordered text-center">
                                 <thead>
                                     <tr>

@@ -17,7 +17,7 @@ class PatientController extends Controller
     {
         $patients = Patient::all();
         return view('patient.index')
-        ->with('patientData', $patients);
+            ->with('patientData', $patients);
     }
 
     /**
@@ -40,12 +40,14 @@ class PatientController extends Controller
         $newPatien->religion = $request->religion;
         $newPatien->job = $request->job;
         $newPatien->age = $request->age;
-        $newPatien->is_already_surgery = $request->is_already_surgery == "on" ? true:false ;
-        $newPatien->is_on_drugs = $request->is_on_drugs == "on" ? true:false;
+        $newPatien->height = $request->height;
+        $newPatien->weight = $request->weight;
+        $newPatien->is_already_surgery = $request->is_already_surgery == "on" ? true : false;
+        $newPatien->is_on_drugs = $request->is_on_drugs == "on" ? true : false;
         $newPatien->surgery_details = $request->surgery_details;
         $newPatien->drug_details = $request->drug_details;
         $newPatien->save();
-        return redirect()->route('patient.show',$newPatien->id);
+        return redirect()->route('patient.show', $newPatien->id);
     }
 
     /**
@@ -53,7 +55,7 @@ class PatientController extends Controller
      */
     public function show(Patient $patient)
     {
-        return view('patient.detail')->with("patient",$patient);
+        return view('patient.detail')->with("patient", $patient);
     }
 
     /**
@@ -61,7 +63,7 @@ class PatientController extends Controller
      */
     public function print(Patient $patient)
     {
-        return view('patient.print')->with("patient",$patient);
+        return view('patient.print')->with("patient", $patient);
     }
 
     /**
@@ -70,7 +72,7 @@ class PatientController extends Controller
     public function edit(Patient $patient)
     {
         return view('patient.edit')
-        ->with("patient",$patient);
+            ->with("patient", $patient);
     }
 
     /**
@@ -84,12 +86,14 @@ class PatientController extends Controller
         $patient->religion = $request->religion;
         $patient->job = $request->job;
         $patient->age = $request->age;
-        $patient->is_already_surgery = $request->is_already_surgery == "on" ? true:false ;
-        $patient->is_on_drugs = $request->is_on_drugs == "on" ? true:false;
+        $patient->height = $request->height;
+        $patient->weight = $request->weight;
+        $patient->is_already_surgery = $request->is_already_surgery == "on" ? true : false;
+        $patient->is_on_drugs = $request->is_on_drugs == "on" ? true : false;
         $patient->surgery_details = $request->surgery_details;
         $patient->drug_details = $request->drug_details;
         $patient->save();
-        return redirect()->route('patient.show',$patient->id);
+        return redirect()->route('patient.show', $patient->id);
     }
 
     /**
@@ -97,9 +101,9 @@ class PatientController extends Controller
      */
     public function destroy(Patient $patient)
     {
-        if($patient->medicalRecords() != null){
-            
-        }else{
+        if ($patient->medicalRecords() != null) {
+
+        } else {
             $patient->delete();
         }
         return redirect()->route("patient.index");

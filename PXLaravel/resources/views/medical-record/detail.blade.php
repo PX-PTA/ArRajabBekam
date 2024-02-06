@@ -52,10 +52,15 @@
                                 <div class="row mb-5">
                                     <div class="col-md-6 mb-3 mb-sm-0">
                                         <a href="{{route('patient.show',$medicalRecord->patient->id)}}" ><h5 class="font-weight-bold">{{$medicalRecord->patient->name}}</h5></a>
-                                        <p>{{$medicalRecord->patient->age}}</p>
-                                        <span style="white-space: pre-line">
-                                            {{$medicalRecord->patient->address}}
-                                        </span>
+                                        <p>Umur : {{$medicalRecord->patient->age}}
+                                        <br>
+                                        Berat : {{$medicalRecord->weight}}
+                                        <br>
+                                        Tinggi : {{$medicalRecord->height}}
+                                        <br>
+                                        Alamat : 
+                                        {{$medicalRecord->patient->address}}
+                                        </p>
                                     </div>
                                     <div class="col-md-6 text-sm-end">
                                         <h5 class="font-weight-bold">Tekanan Darah</h5>

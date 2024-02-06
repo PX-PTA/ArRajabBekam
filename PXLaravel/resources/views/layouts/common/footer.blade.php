@@ -13,7 +13,7 @@
         <div class="d-flex align-items-center">
             <img class="logo" src="{{ asset('assets/images/logo.png') }}" alt="">
             <div>
-                <p class="m-0">Prime Xaviers &copy;2023</p>
+                <p class="m-0">Prime Xaviers &copy; {{now()->format(' Y')}}    </p>
                 <p class="m-0">All rights reserved</p>
             </div>
         </div>
