@@ -7,9 +7,9 @@
     </x-slot>
     <x-slot name="slot">
         <div class="breadcrumb">
-            <h1>Medical Record</h1>
+            <h1>Rekam Medis</h1>
             <ul>
-                <li><a href="">Detail Medical Record</a></li>
+                <li><a href="">Detail Rekam Medis</a></li>
                 <li>No : {{$medicalRecord->id}}</li>
             </ul>
         </div>

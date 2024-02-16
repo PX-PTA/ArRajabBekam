@@ -7,10 +7,10 @@
     </x-slot>
     <x-slot name="slot">
         <div class="breadcrumb">
-            <h1>Medical Record</h1>
+            <h1>Rekam Medis</h1>
             <ul>
-                <li><a href="">Create New Medical Record</a></li>
-                <li>Medical Record</li>
+                <li><a href="">Buat Rekam Medis Baru</a></li>
+                <li>Rekam Medis</li>
             </ul>
         </div>
 
@@ -20,7 +20,7 @@
             <div class="col-md-12">
                 <div class="card o-hidden mb-4">
                     <div class="card-header">
-                        <h3 class="w-50 float-start card-title m-0">New Medical Record</h3>
+                        <h3 class="w-50 float-start card-title m-0">Rekam Medis Baru</h3>
                     </div>
                     <div class="card-body">
                         <!-- begin::main-row -->
@@ -46,6 +46,18 @@
                                                         placeholder="Input Nama" required="required" @if($currentPatient != null) value="{{$currentPatient->name}}" @endif>
                                                 </div>
 
+                                                <div class="col-md-4 form-group mb-3">
+                                                    <label for="website">Berat Badan (Kg)</label>
+                                                    <input value="{{ $medicalRecord->weight }}" class="form-control"
+                                                        id="job" name="weight" placeholder="Input Berat Badan">
+                                                </div>
+
+                                                <div class="col-md-4 form-group mb-3">
+                                                    <label for="website">Tinggi Badan (cm)</label>
+                                                    <input value="{{ $medicalRecord->height }}" class="form-control"
+                                                        id="job" name="height" placeholder="Input Tinggi Badan">
+                                                </div>
+                                                
                                                 <div class="col-md-3 form-group mb-3">
                                                     <label for="picker">Tanggal</label>
                                                     <div class="input-group">

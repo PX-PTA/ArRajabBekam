@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="slot">
         <div class="breadcrumb">
-            <h1>Patient</h1>
+            <h1>Pasien</h1>
             <ul>
-                <li><a href="">Patient List</a></li>
-                <li>Patient Data</li>
+                <li><a href="">Pasien List</a></li>
+                <li>Pasien Data</li>
             </ul>
         </div>
 
@@ -14,14 +14,14 @@
             <div class="col-md-12">
                 <div class="card o-hidden mb-4">
                     <div class="card-header">
-                        <h3 class="w-50 float-start card-title m-0">Patient List</h3>
+                        <h3 class="w-50 float-start card-title m-0">Pasien List</h3>
                         <div class="dropdown dropleft text-end w-50 float-end">
                             <button class="btn bg-gray-700" type="button" id="dropdownMenuButton_table2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="nav-icon i-Gear-2"></i>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_table2">
-                                <a class="dropdown-item" href="{{route('patient.create')}}">Add new Patient</a>
+                                <a class="dropdown-item" href="{{route('patient.create')}}">Tambah Pasien</a>
                             </div>
                         </div>
                     </div>

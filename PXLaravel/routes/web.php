@@ -36,6 +36,10 @@ Route::get('/blank', function () {
     return view('starter');
 })->name('starter');
 
+Route::get('/print-medical-record', function () {
+    return view('print.medical-record');
+})->name('print-medical');
+
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/users', [UsersController::class, 'index'])->middleware(['auth', 'verified'])->name('users.index');
