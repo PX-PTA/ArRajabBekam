@@ -35,7 +35,7 @@ class UsersController extends Controller
         $patient->notify_date = Carbon::now();
         $patient->save();
         // echo 'https://wa.me/'.$patient->phoneNo;
-        return redirect('https://wa.me/0' . $patient->phoneNo);
+        return redirect('https://api.whatsapp.com/send?phone=' . $patient->phoneNo);
         //
     }
 
