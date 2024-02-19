@@ -36,10 +36,6 @@ Route::get('/blank', function () {
     return view('starter');
 })->name('starter');
 
-Route::get('/print-medical-record', function () {
-    return view('print.medical-record');
-})->name('print-medical');
-
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/users', [UsersController::class, 'index'])->middleware(['auth', 'verified'])->name('users.index');
@@ -57,6 +53,7 @@ Route::get('/patient/destroy/{patient}', [PatientController::class, 'destroy'])-
 Route::post('/patient/update/{patient}', [PatientController::class, 'update'])->name('patient.update');
 Route::post('/patient/store', [PatientController::class, 'store'])->name('patient.store');
 
+Route::get('/print-medical-record/{medicalRecord}', [MedicalRecordController::class, 'print'])->middleware(['auth', 'verified'])->name('print-medical');
 Route::get('/medical-records', [MedicalRecordController::class, 'index'])->middleware(['auth', 'verified'])->name('medical-record.index');
 Route::get('/medical-records/create/{curPat?}', [MedicalRecordController::class, 'create'])->middleware(['auth', 'verified'])->name('medical-record.create');
 Route::get('/medical-records/{medicalRecord}', [MedicalRecordController::class, 'show'])->middleware(['auth', 'verified'])->name('medical-record.show');

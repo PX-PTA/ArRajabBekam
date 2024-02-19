@@ -176,4 +176,9 @@ class MedicalRecordController extends Controller
         $medicalRecord->delete();
         return redirect()->route("medical-record.index");
     }
+
+    public function print(MedicalRecord $medicalRecord) {
+        return view('print.medical-record')->with('medicalRecord', $medicalRecord);
+    }
+    
 }

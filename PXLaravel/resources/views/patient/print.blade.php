@@ -16,14 +16,18 @@
         border: 1px solid black;
         border-collapse: collapse;
     }
+    .no-border{
+        border-left: none !important;
+        border-right: none !important;
+    }
     </style>
 </head>
 
 <body>
     <table width="100%">
         <tr>
-            <td rowspan="3">
-                <img src="{{ asset('logo-printer.png') }}" alt="Girl in a jacket" width="150" height="150">
+            <td rowspan="3" >
+                <img src="{{ asset('logo-printer.png') }}"  width="125px" height="100px">
             </td>
             <th>Bekam Sehat Batam</th>
         </tr>
@@ -39,28 +43,28 @@
     <br>
     <table class="tableRekam" width="100%">
         <tr>
-            <td width="10%">Nama</td>
-            <td width="1%">:</td>
-            <td>{{$patient->name}}</td>
-            <td width="10%">Agama</td>
-            <td width="1%">:</td>
-            <td>{{$patient->religion}}</td>
+            <td width="10%" style="border-right: none" >Nama</td>
+            <td width="1%" class="no-border">:</td>
+            <td style="border-left:none">{{$patient->name}}</td>
+            <td width="10%" style="border-right: none">Agama</td>
+            <td width="1%" class="no-border">:</td>
+            <td style="border-left:none">{{$patient->religion}}</td>
         </tr>
         <tr>
-            <td width="10%">Alamat</td>
-            <td width="1%">:</td>
-            <td>{{$patient->address}}</td>
-            <td width="10%">Pekerjaan</td>
-            <td width="1%">:</td>
-            <td>{{$patient->job}}</td>
+            <td width="10%" style="border-right: none">Alamat</td>
+            <td width="1%" class="no-border">:</td>
+            <td style="border-left:none">{{$patient->address}}</td>
+            <td width="10%" style="border-right: none">Pekerjaan</td>
+            <td width="1%" class="no-border">:</td>
+            <td style="border-left:none">{{$patient->job}}</td>
         </tr>
         <tr>
-            <td width="10%">No. Hp/WA</td>
-            <td width="1%">:</td>
-            <td>{{$patient->phoneNo}}</td>
-            <td width="10%">Usia</td>
-            <td width="1%">:</td>
-            <td>{{$patient->age}}</td>
+            <td width="10%" style="border-right: none">No. Hp/WA</td>
+            <td width="1%" class="no-border">:</td>
+            <td style="border-left:none">{{$patient->phoneNo}}</td>
+            <td width="10%" style="border-right: none">Usia</td>
+            <td width="1%" class="no-border">:</td>
+            <td style="border-left:none">{{$patient->age}}</td>
         </tr>
     </table>
 
@@ -85,9 +89,9 @@
             <th>sys</th>
             <th>dia</th>
         </tr>
-        @foreach($patient->medicalRecords as $medicalRecord)
+        @foreach($patient->medicalRecords as $key => $medicalRecord )
         <tr>
-            <td>{{$medicalRecord->no}}</td>
+            <td>{{$key+1}}</td>
             <td>{{$medicalRecord->date}}</td>
             <td>{{$medicalRecord->complaint}}</td>
             <td>{{$medicalRecord->diagnosis}}</td>
