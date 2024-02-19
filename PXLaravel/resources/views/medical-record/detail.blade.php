@@ -34,7 +34,7 @@
                                 <button onclick="window.location.href='{{route('medical-record.index')}}'" class="btn btn-danger mb-sm-0 mb-3 print-invoice"><i class="text-20 i-Left"></i> &nbsp Back</button>
                                 &nbsp<button onclick="window.location.href='{{route('medical-record.edit',$medicalRecord->id)}}'" class="btn btn-info mb-sm-0 mb-3 print-invoice"><i class="text-20 i-Left"></i> &nbsp Edit</button>
                                 <span class="m-auto"></span>
-                                <button class="btn btn-primary mb-sm-0 mb-3 print-invoice">Print Rekam Medis</button>                                
+                                <button onclick="window.location.href='{{route('print-medical',$medicalRecord->id)}}'" class="btn btn-primary mb-sm-0 mb-3 print-invoice">Print Rekam Medis</button>                                
                                 &nbsp<button onclick="window.location.href='{{route('finance.create',$medicalRecord->id)}}'" class="btn btn-primary mb-sm-0 mb-3 print-invoice">Tambah Biaya Konsultasi</button>
                             </div>
                             <!---===== Print Area =======-->

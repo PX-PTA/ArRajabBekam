@@ -23,15 +23,15 @@
     <table width="100%">
         <tr>
             <td rowspan="3">
-                <img src="{{ asset('logo-printer.jpeg') }}" alt="Girl in a jacket" width="150" height="150">
+                <img src="{{ asset('logo-printer.png') }}" alt="Girl in a jacket" width="150" height="150">
             </td>
-            <th>AR-RAJAB BEKAM</th>
+            <th>Bekam Sehat Batam</th>
         </tr>
         <tr>
-            <td align="center">Ruko Royal Sincom Blok C no 15 Batam Cener, Kepulauan Riau</td>
+            <td align="center">Ruko Artha Mandiri No.3 kel.Buliang kec.Batu aji Kota Batam Kepulauan Riau</td>
         </tr>
         <tr>
-            <td align="center">Hp : 08212006460; WA : 08212006460</td>
+            <td align="center">Hp : +6282172830109; WA : +6282172830109</td>
         </tr>
     </table>
     <hr>
@@ -64,7 +64,7 @@
         </tr>
     </table>
 
-    <h3 width="100%" align="center" >REKAM MEDIK KLIEN AR-RAJAB BEKAM</h3>
+    <h3 width="100%" align="center" >REKAM MEDIK KLIEN BEKAM SEHAT BATAM</h3>
     <p>
         Riwayat Penyakit<br>
         Riwayat Operasi : (@if($patient->is_already_surgery) Ya @else Tidak @endif) Operasi. @if($patient->is_already_surgery) {{$patient->surgery_details}} @endif<br>

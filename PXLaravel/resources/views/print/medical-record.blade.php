@@ -10,16 +10,24 @@
             margin-left: auto;
             margin-right: auto;
         }
+        table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
     </style>
 </head>
 
 <body width="100%">
-    TERAPI BEKAM SEHAT BATAM
-    RUKO ARTA MANDIRI NO.3 BATU AJI BATAMM KEPULAUAN RIAU
+    <div style="text-align: center">
+    TERAPI BEKAM SEHAT BATAM <br>
+    RUKO ARTA MANDIRI NO.3 BATU AJI BATAM KEPULAUAN RIAU<br>
     NO. HP 081372237003, 085272055519
+    </div>
     <hr>
+    <div style="text-align: center">
     LAPORAN REKAM MEDIK KLIEN
-    <table border="1" width="100%">
+    </div>
+    <table width="100%">
         <tr>
             <td>Nama :
             </td>
@@ -52,7 +60,7 @@
         </tr>
     </table>
     <br>
-    <table border="1" width="100%">
+    <table width="100%">
         <tr>
             <td rowspan="2">
                 No
