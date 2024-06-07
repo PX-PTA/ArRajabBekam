@@ -3,8 +3,8 @@
         <div class="breadcrumb">
             <h1>{{ config('app.name', 'Laravel') }}</h1>
             <ul>
-                <li><a href="">Dashboard</a></li>
-                <li>Dashboard</li>
+                <li><a href="">Halaman Utama</a></li>
+                <li>Halaman Utama</li>
             </ul>
         </div>
 
@@ -38,7 +38,7 @@
                 <!-- CARD ICON -->
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="card card-icon mb-4">
+                        <div class="card card-icon mb-4" style="background:cyan">
                             <div class="card-body text-center">
                                 <i class="i-Doctor"></i>
                                 <p class="text-muted mt-2 mb-2">Total Pasien</p>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="card card-icon mb-4">
+                        <div class="card card-icon mb-4" style="background:cyan">
                             <div class="card-body text-center">
                                 <i class="i-Files"></i>
                                 <p class="text-muted mt-2 mb-2">Total Rekam Medis</p>
@@ -57,8 +57,8 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="card card-icon mb-4">
-                            <div class="card-body text-center">
+                        <div class="card card-icon mb-4" style="background:cyan">
+                            <div class="card-body text-center" >
                                 <i class="i-Money-2"></i>
                                 <p class="text-muted mt-2 mb-2">Total Pembayaran</p>
                                 <p class="text-primary text-24 line-height-1 m-0">Rp {{ $medicalRecordPayment }} </p>
@@ -96,8 +96,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-5 col-md-12">
-                <div class="card mb-4">
+            <div class="col-lg-5 col-md-12" >
+                <div class="card mb-4" style="background-color:yellow">
                     <div class="card-body">
                         <div class="card-title">Rekapan Bulan Lalu -
                             {{ Carbon\Carbon::now()->subMonth()->format('M') }}</div>

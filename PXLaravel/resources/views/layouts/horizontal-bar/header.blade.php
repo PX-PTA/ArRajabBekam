@@ -1,4 +1,4 @@
-    <div class="main-header">
+    <div class="main-header" style="background-color:cyan">
         <div class="logo">
             <img src="{{ asset('assets/images/logo.png') }}" alt="">
         </div>
@@ -22,7 +22,7 @@
             <!-- User avatar dropdown -->
             <div class="dropdown">
                 <div class="user col align-self-end">
-                    <img src="{{ asset('assets/images/faces/1.jpg') }}" id="userDropdown" alt=""
+                    <img src="{{ asset('assets/images/logo.png') }}" id="userDropdown" alt=""
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
