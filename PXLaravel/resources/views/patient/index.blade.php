@@ -13,8 +13,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card o-hidden mb-4">
-                    <div class="card-header" style="background-color:black;color:white">
-                        <h3 style="color:white" class="w-50 float-start card-title m-0">Pasien List</h3>
+                    <div class="card-header" style="background-color:#6483b6;color:white">
+                        <h3 style="color:white;padding-top:7px" class="w-50 float-start card-title m-0">Pasien List</h3>
                         <div class="dropdown dropleft text-end w-50 float-end">
                             <button class="btn bg-gray-700" type="button" id="dropdownMenuButton_table2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

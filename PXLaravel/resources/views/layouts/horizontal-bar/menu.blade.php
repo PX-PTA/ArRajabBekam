@@ -82,24 +82,57 @@
                     </li>
                 </ul>
                 <ul class="menu float-start">   
-                    <li class="{{ request()->is('patient/*') ? 'active' : '' }}">
+                    <li class="{{ request()->is('product/*') ? 'active' : '' }}">
                         <div>
                             <div>
                                 <label class="toggle" for="drop-2">
-                                    Produk
+                                    Produk  dan Inventory
                                 </label>
-                                <a class="{{ Route::currentRouteName()=='patient/*' ? 'open' : '' }}"
-                                href="{{route('medical-record.index')}}">
+                                <a class="{{ Route::currentRouteName()=='product/*' ? 'open' : '' }}"
+                                href="{{route('product.index')}}">
                                     <i class="nav-icon me-2 i-Bar-Chart"></i>
-                                    Produk
+                                    Produk  dan Inventory
                                 </a>
                                 <input type="checkbox" id="drop-2">
                                 <ul>
                                     <li class="nav-item ">
-                                        <a class="{{ Route::currentRouteName()=='patient/*' ? 'open' : '' }}"
-                                            href="{{route('medical-record.index')}}">
+                                        <a class="{{ Route::currentRouteName()=='product/*' ? 'open' : '' }}"
+                                            href="{{route('product.index')}}">
                                             <i class="nav-icon me-2 i-Clock-3"></i>
                                             <span class="item-name">Data Produk</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="{{ Route::currentRouteName()=='inventory/*' ? 'open' : '' }}"
+                                            href="{{route('inventory.index')}}">
+                                            <i class="nav-icon me-2 i-Clock-3"></i>
+                                            <span class="item-name">History Stok</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="menu float-start">   
+                    <li class="{{ request()->is('product/*') ? 'active' : '' }}">
+                        <div>
+                            <div>
+                                <label class="toggle" for="drop-2">
+                                    Penjualan
+                                </label>
+                                <a class="{{ Route::currentRouteName()=='sale/*' ? 'open' : '' }}"
+                                href="{{route('sale.index')}}">
+                                    <i class="nav-icon me-2 i-Bar-Chart"></i>
+                                    Penjualan
+                                </a>
+                                <input type="checkbox" id="drop-2">
+                                <ul>
+                                    <li class="nav-item ">
+                                        <a class="{{ Route::currentRouteName()=='sale/*' ? 'open' : '' }}"
+                                            href="{{route('sale.index')}}">
+                                            <i class="nav-icon me-2 i-Clock-3"></i>
+                                            <span class="item-name">Data Penjualan</span>
                                         </a>
                                     </li>
                                 </ul>

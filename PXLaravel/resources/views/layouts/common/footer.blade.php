@@ -1,6 +1,6 @@
 <!-- Footer Start -->
 <div class="flex-grow-1"></div>
-<div class="app-footer" style="background-color:cyan">
+<div class="app-footer" style="background-color:#9beffa">
     <div class="row">
     </div>
     <div class="footer-bottom pt-3 d-flex flex-column flex-sm-row align-items-center">

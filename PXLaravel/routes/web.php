@@ -6,6 +6,9 @@ use App\Http\Controllers\MedicalRecordController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SaleController;
+use App\Http\Controllers\ProductInventoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,6 +64,22 @@ Route::get('/medical-records/edit/{medicalRecord}', [MedicalRecordController::cl
 Route::get('/medical-records/destroy/{medicalRecord}', [MedicalRecordController::class, 'destroy'])->name('medical-record.destroy');
 Route::post('/medical-records/update/{medicalRecord}', [MedicalRecordController::class, 'update'])->name('medical-record.update');
 Route::post('/medical-records/store', [MedicalRecordController::class, 'store'])->name('medical-record.store');
+
+Route::get('/products', [ProductController::class, 'index'])->middleware(['auth', 'verified'])->name('product.index');
+Route::get('/product/create/', [ProductController::class, 'create'])->middleware(['auth', 'verified'])->name('product.create');
+Route::get('/product/{product}', [ProductController::class, 'show'])->middleware(['auth', 'verified'])->name('product.show');
+Route::get('/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
+Route::get('/product/stok/', [ProductController::class, 'stok'])->name('product.stok');
+Route::get('/product/destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+Route::post('/product/update/{product}', [ProductController::class, 'update'])->name('product.update');
+Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+
+Route::get('/sales', [SaleController::class, 'index'])->middleware(['auth', 'verified'])->name('sale.index');
+Route::get('/sale/create/', [SaleController::class, 'create'])->middleware(['auth', 'verified'])->name('sale.create');
+Route::get('/sale/show/{sale}', [SaleController::class, 'show'])->middleware(['auth', 'verified'])->name('sale.show');
+Route::post('/sale/store', [SaleController::class, 'store'])->name('sale.store');
+
+Route::get('/inventories', [ProductInventoryController::class, 'index'])->middleware(['auth', 'verified'])->name('inventory.index');
 
 Route::get('/finance', [FinanceController::class, 'index'])->middleware(['auth', 'verified'])->name('finance.index');
 Route::get('/finance/create/{curMedical?}', [FinanceController::class, 'create'])->middleware(['auth', 'verified'])->name('finance.create');

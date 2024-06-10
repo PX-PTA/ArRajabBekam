@@ -13,8 +13,8 @@
             <div class="col-md-12">
                 <section class="ul-widget-stat-s1">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                        <div class="col-lg-4 col-md-6 col-sm-6" >
+                            <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4" style="background-color:#9beffa;color:white">
                                 <div class="card-body text-center">
                                     <i class="i-Car-Items"></i>
                                     <div class="content">
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                            <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4" style="background-color:#9beffa;color:white">
                                 <div class="card-body text-center">
                                     <i class="i-Data-Upload"></i>
                                     <div class="content">
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                            <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4" style="background-color:#9beffa;color:white">
                                 <div class="card-body text-center">
                                     <i class="i-Data-Upload"></i>
                                     <div class="content">
@@ -51,8 +51,8 @@
             </div>
             <div class="col-md-12">
                 <div class="card o-hidden mb-4">
-                    <div class="card-header">
-                        <h3 class="w-50 float-start card-title m-0">Data Keuangan</h3>
+                    <div class="card-header" style="background-color:#6483b6;color:white">
+                        <h3 class="w-50 float-start card-title m-0" style="color:white;padding-top:7px">Data Keuangan</h3>
                         <div class="dropdown dropleft text-end w-50 float-end">
                             <button class="btn bg-gray-700" type="button" id="dropdownMenuButton_table2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -38,7 +38,7 @@
                 <!-- CARD ICON -->
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="card card-icon mb-4" style="background:cyan">
+                        <div class="card card-icon mb-4" style="background:#e3effe">
                             <div class="card-body text-center">
                                 <i class="i-Doctor"></i>
                                 <p class="text-muted mt-2 mb-2">Total Pasien</p>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="card card-icon mb-4" style="background:cyan">
+                        <div class="card card-icon mb-4" style="background:#e3effe">
                             <div class="card-body text-center">
                                 <i class="i-Files"></i>
                                 <p class="text-muted mt-2 mb-2">Total Rekam Medis</p>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="card card-icon mb-4" style="background:cyan">
+                        <div class="card card-icon mb-4" style="background:#e3effe">
                             <div class="card-body text-center" >
                                 <i class="i-Money-2"></i>
                                 <p class="text-muted mt-2 mb-2">Total Pembayaran</p>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="card card-icon mb-4">
+                        <div class="card card-icon mb-4" style="background:#e3effe">
                             <div class="card-body text-center">
                                 <i class="i-Business-ManWoman"></i>
                                 <p class="text-muted mt-2 mb-2">Pasien Hari ini</p>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="card card-icon mb-4">
+                        <div class="card card-icon mb-4" style="background:#e3effe">
                             <div class="card-body text-center">
                                 <i class="i-File-Cloud"></i>
                                 <p class="text-muted mt-2 mb-2">Rekam Medis Hari ini</p>
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="card card-icon mb-4">
+                        <div class="card card-icon mb-4" style="background:#e3effe">
                             <div class="card-body text-center">
                                 <i class="i-Money-2"></i>
                                 <p class="text-muted mt-2 mb-2">Total Pembayaran Hari ini</p>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="col-lg-5 col-md-12" >
-                <div class="card mb-4" style="background-color:yellow">
+                <div class="card mb-4" style="background-color:#617dac">
                     <div class="card-body">
                         <div class="card-title">Rekapan Bulan Lalu -
                             {{ Carbon\Carbon::now()->subMonth()->format('M') }}</div>
@@ -110,7 +110,7 @@
                                     onchange="myFunction()">
                             </div>
                             <div class="col-md-12">
-                                <table class="table">
+                                <table class="table" style="background-color:white">
                                     <thead class="card-header">
                                         <tr>
                                             <th scope="col">Jenis</th>
@@ -146,8 +146,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card o-hidden mb-4">
-                    <div class="card-header">
-                        <h3 class="w-50 float-start card-title m-0">Pasien Baru Hari ini</h3>
+                    <div class="card-header" style="background-color:#617dac">
+                        <h3 class="w-50 float-start card-title m-0" style="color:white;padding-top:7px">Pasien Baru Hari ini</h3>
                         <div class="dropdown dropleft text-end w-50 float-end">
                             <button class="btn bg-gray-700" type="button" id="dropdownMenuButton_table2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -191,8 +191,8 @@
 
             <div class="col-md-6">
                 <div class="card o-hidden mb-4">
-                    <div class="card-header">
-                        <h3 class="w-50 float-start card-title m-0">Rekam Medis Hari Ini</h3>
+                    <div class="card-header" style="background-color:#617dac">
+                        <h3 class="w-50 float-start card-title m-0" style="color:white;padding-top:7px">Rekam Medis Hari Ini</h3>
                         <div class="dropdown dropleft text-end w-50 float-end">
                             <button class="btn bg-gray-700" type="button" id="dropdownMenuButton_table_1"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

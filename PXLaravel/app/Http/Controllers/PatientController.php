@@ -101,7 +101,7 @@ class PatientController extends Controller
      */
     public function destroy(Patient $patient)
     {
-        if ($patient->medicalRecords() != null) {
+        if ($patient->medicalRecords()->count() > 0) {
 
         } else {
             $patient->delete();

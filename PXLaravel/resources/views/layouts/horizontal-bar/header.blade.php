@@ -1,4 +1,4 @@
-    <div class="main-header" style="background-color:cyan">
+    <div class="main-header" style="background-color:#9beffa">
         <div class="logo">
             <img src="{{ asset('assets/images/logo.png') }}" alt="">
         </div>
