@@ -45,7 +45,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h4 class="font-weight-bold">Detail Product Penjualan</h4>
-                                        <table class="table table-hover mb-4">
+                                        <table class=" table table-bordered text-center">
                                             <thead class="bg-gray-300">
                                                 <tr>
                                                     <th scope="col">Nama Product</th>
