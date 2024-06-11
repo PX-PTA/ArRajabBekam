@@ -81,7 +81,7 @@
                                 <tbody>
                                     @foreach($financeData as $patients)
                                     <tr>
-                                        <th scope="row">{{$patients->id}}</th>
+                                        <td scope="row">{{$patients->id}}</td>
                                         <td >{{$patients->name}}</td>
                                         <td >
                                             {{$patients->description}}

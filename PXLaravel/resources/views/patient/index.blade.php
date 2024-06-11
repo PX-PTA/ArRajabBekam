@@ -43,7 +43,7 @@
                                 <tbody>
                                     @foreach($patientData as $patients)
                                     <tr>
-                                        <th onclick="window.location.href='{{route('patient.show',$patients->id)}}'" scope="row">{{$patients->id}}</th>
+                                        <td onclick="window.location.href='{{route('patient.show',$patients->id)}}'" scope="row">{{$patients->id}}</td>
                                         <td onclick="window.location.href='{{route('patient.show',$patients->id)}}'">{{$patients->name}}</td>
                                         <td onclick="window.location.href='{{route('patient.show',$patients->id)}}'">
                                             {{$patients->phoneNo}}

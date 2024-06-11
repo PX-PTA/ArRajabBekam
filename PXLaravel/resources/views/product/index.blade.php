@@ -42,7 +42,7 @@
                                 <tbody>
                                     @foreach($productData as $product)
                                     <tr>
-                                        <th onclick="window.location.href='{{route('product.show',$product->id)}}'" scope="row">{{$product->id}}</th>
+                                        <td onclick="window.location.href='{{route('product.show',$product->id)}}'" scope="row">{{$product->id}}</td>
                                         <td onclick="window.location.href='{{route('product.show',$product->id)}}'">{{$product->name}}</td>
                                         <td onclick="window.location.href='{{route('product.show',$product->id)}}'">
                                             {{$product->description}}

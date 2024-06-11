@@ -175,7 +175,7 @@
                                 <tbody>
                                     @foreach ($patientDataToday as $patient)
                                         <tr>
-                                            <th scope="row">{{ $patient->id }}</th>
+                                            <td scope="row">{{ $patient->id }}</td>
                                             <td>{{ $patient->name }}</td>
                                             <td>{{ $patient->phoneNo }}</td>
                                             <td>{{ $patient->age }}</td>
@@ -210,7 +210,7 @@
 
                         <div class="table-responsive">
 
-                            <table id="sales_table" class="table  text-center">
+                            <table id="sales_table" class="table  table-bordered text-center">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
@@ -222,7 +222,7 @@
                                 <tbody>
                                     @foreach ($medicalRecordDataToday as $medicalRecord)
                                         <tr>
-                                            <th scope="row">{{ $medicalRecord->id }}</th>
+                                            <td scope="row">{{ $medicalRecord->id }}</td>
                                             <td>{{ $medicalRecord->patient->name }}</td>
                                             <td>{{ $medicalRecord->terapis }}</td>
                                             <td>{{ $medicalRecord->action }}</td>

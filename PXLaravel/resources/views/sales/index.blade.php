@@ -55,7 +55,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="user_table" class=" table table-bordered text-center">
+                            <table id="user_table" class="table table-bordered text-centethead-light">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
@@ -68,7 +68,7 @@
                                 <tbody>
                                     @foreach($productData as $sale)
                                     <tr>
-                                        <th onclick="window.location.href='{{route('sale.show',$sale->id)}}'" scope="row">{{$sale->id}}</th>
+                                        <td onclick="window.location.href='{{route('sale.show',$sale->id)}}'">{{$sale->id}}</td>
                                         <td onclick="window.location.href='{{route('sale.show',$sale->id)}}'">
                                             {{$sale->description}}
                                         </td>

@@ -40,7 +40,7 @@
                                     @foreach($productData as $product)
                                     @if($product->product()->first() != null)
                                     <tr>
-                                        <th onclick="window.location.href='{{route('product.show',$product->product()->first()->id)}}'" scope="row">{{$product->id}}</th>
+                                        <td onclick="window.location.href='{{route('product.show',$product->product()->first()->id)}}'" scope="row">{{$product->id}}</td>
                                         <td onclick="window.location.href='{{route('product.show',$product->product()->first()->id)}}'">{{$product->product()->first()->name}}</td>
                                         <td onclick="window.location.href='{{route('product.show',$product->product()->first()->id)}}'">{{$product->description}}</td>
                                         <td onclick="window.location.href='{{route('product.show',$product->product()->first()->id)}}'">{{$product->quantity}}</td>

@@ -23,7 +23,7 @@
     {{ $pagecss }}
 </head>
 
-<body class="text-start">
+<body class="text-start dark-theme">
     @php
     $layout = session('layout');
     @endphp

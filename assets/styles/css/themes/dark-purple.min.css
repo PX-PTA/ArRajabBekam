@@ -27922,9 +27922,11 @@ blockquote {
 }
 .dark-theme .table td {
   border-top: 1px solid #262c49;
+  color:#c2c6dc;
 }
 .dark-theme .table thead th {
   border-bottom: 2px solid #262c49;
+  color:#c2c6dc;
 }
 .dark-theme .table .thead-light th {
   color: #c2c6dc;
