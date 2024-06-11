@@ -46,7 +46,7 @@
                                     <div class="col-md-12">
                                         <h4 class="font-weight-bold">Detail Product Penjualan</h4>
                                         <table class=" table table-bordered text-center">
-                                            <thead class="bg-gray-300">
+                                            <thead>
                                                 <tr>
                                                     <th scope="col">Nama Product</th>
                                                     <th scope="col">Jumlah</th>
