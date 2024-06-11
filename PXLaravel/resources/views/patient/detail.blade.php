@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-4 col-xl-4">
                 <div class="card">
-                    <div class="card-body" style="background-color:#7DDA58">
+                    <div class="card-body">
                         <div class="ul-contact-detail__info">
                             <div class="row">
                                 <div class="col-12 text-center">
