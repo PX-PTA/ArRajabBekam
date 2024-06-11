@@ -110,7 +110,7 @@
                                     onchange="myFunction()">
                             </div>
                             <div class="col-md-12">
-                                <table class="table" style="background-color:white">
+                                <table class=" table table-bordered text-center">
                                     <thead class="card-header">
                                         <tr>
                                             <th scope="col">Jenis</th>

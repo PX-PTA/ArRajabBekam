@@ -29597,10 +29597,11 @@ blockquote {
 .dark-theme a {
   color: #c2c6dc !important;
 }
-.dark-theme input {
+/* .dark-theme input {
   background: #262c49 !important;
   border-color: #10163a;
-}
+  color: #c2c6dc !important;
+} */
 .dark-theme .app-footer {
   margin-top: 2rem;
   background: #10163a;
@@ -29763,6 +29764,13 @@ blockquote {
   background-color: #262c49;
   border: 1px solid #262c49;
 }
+
+/* .dark-theme textarea {
+  color: #c2c6dc !important;
+  background-color: #262c49;
+  border: 1px solid #262c49;
+} */
+
 .dark-theme .custom-select {
   color: #c2c6dc;
   background-color: #262c49;
