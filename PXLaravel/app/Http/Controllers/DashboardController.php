@@ -38,20 +38,23 @@ class DashboardController extends Controller
 
         $countPatientReminder = 0;
         foreach($patient as $patientA){
-            if($countPatientReminder > 5){break;}
             $getMedicalRecord = MedicalRecord::where('patient_id',$patientA->id)->latest('created_at')->first();
             if($patientA->notify_date < Carbon::now()->addMonth(-1)){
                 if($getMedicalRecord != null)
                 {
                     if( $getMedicalRecord->created_at < Carbon::now()->addMonth(-1)){
-                        array_push($patientReminder,$patientA);
-                        $countPatientReminder++;
+                        if($countPatientReminder < 6){
+                            array_push($patientReminder,$patientA);
+                            $countPatientReminder++;
+                        }
                     }            
                 }
                 else
                 {
-                    array_push($patientReminder,$patientA);
-                    $countPatientReminder++;
+                    if($countPatientReminder < 6){
+                        array_push($patientReminder,$patientA);
+                        $countPatientReminder++;
+                    }
                 }
             }
         }              
