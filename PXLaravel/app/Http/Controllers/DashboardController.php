@@ -64,6 +64,6 @@ class DashboardController extends Controller
         ->with('medicalRecordPaymentToday',$medicalRecordPaymentToday)
         ->with('medicalRecordPayment',$medicalRecordPayment)
         ->with('medicalRecordPaymentMonth',$medicalRecordPaymentMonth)
-        ->with('patientReminder',$patientReminder);
+        ->with('patientReminder',array_slice($patientReminder,5));
     }
 }
