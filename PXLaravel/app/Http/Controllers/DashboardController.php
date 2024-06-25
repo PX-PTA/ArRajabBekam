@@ -50,6 +50,7 @@ class DashboardController extends Controller
                     array_push($patientReminder,$patientA);
                 }
             }
+            if(Count($patientReminder) > 5) {break;}
         }              
 
         return view('dashboard')
