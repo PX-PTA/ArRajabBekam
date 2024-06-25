@@ -45,7 +45,7 @@ class DashboardController extends Controller
                     if( $getMedicalRecord->created_at < Carbon::now()->addMonth(-1)){
                         if($countPatientReminder < 6){
                             array_push($patientReminder,$patientA);
-                            $countPatientReminder++;
+                            $countPatientReminder = $countPatientReminder+1;
                         }
                     }            
                 }
@@ -53,7 +53,7 @@ class DashboardController extends Controller
                 {
                     if($countPatientReminder < 6){
                         array_push($patientReminder,$patientA);
-                        $countPatientReminder++;
+                        $countPatientReminder = $countPatientReminder+1;
                     }
                 }
             }
