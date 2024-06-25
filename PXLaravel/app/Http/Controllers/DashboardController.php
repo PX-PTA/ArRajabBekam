@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $patientReminder = array();
 
         foreach($patient as $patientA){
-            if(Count($patientReminder) > 5){
+            if(count($patientReminder) > 5){
                 continue;
             }
             $getMedicalRecord = MedicalRecord::where('patient_id',$patientA->id)->latest('created_at')->first();
