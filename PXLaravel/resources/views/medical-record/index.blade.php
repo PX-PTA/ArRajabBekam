@@ -10,19 +10,23 @@
 
         <div class="separator-breadcrumb border-top"></div>
         {{-- end of breadcrumb --}}
-        
+
         <div class="row">
             <div class="col-md-12">
                 <div class="card o-hidden mb-4">
                     <div class="card-header" style="background-color:#6483b6;color:white">
-                        <h3 class="w-50 float-start card-title m-0"  style="color:white;padding-top:7px">Data Rekam Medis</h3>
+                        <h3 class="w-50 float-start card-title m-0" style="color:white;padding-top:7px">Data Rekam Medis
+                        </h3>
                         <div class="dropdown dropleft text-end w-50 float-end">
                             <button class="btn bg-gray-700" type="button" id="dropdownMenuButton_table2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="nav-icon i-Gear-2"></i>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_table2">
-                                <a class="dropdown-item" href="{{route('medical-record.create')}}">Add new Medical Checkup</a>
+                                <a class="dropdown-item" href="{{route('medical-record.create')}}">Add new Medical
+                                    Checkup</a>
+                                <a class="dropdown-item" href="{{route('medical-record.export','')}}">Export Medical Checkup
+                                    Checkup</a>
                             </div>
                         </div>
                     </div>
@@ -42,16 +46,28 @@
                                 <tbody>
                                     @foreach($medicalRecordData as $medicalRecord)
                                     <tr>
-                                        <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->no}}</td>
-                                        <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{date('d-M-Y', strtotime($medicalRecord->date))}}</td>
-                                        <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->patient->name}}</td>
-                                        <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->terapis}}</td>
-                                        <td onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">{{$medicalRecord->action}}</td>
+                                        <td
+                                            onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">
+                                            {{$medicalRecord->no}}</td>
+                                        <td
+                                            onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">
+                                            {{date('d-M-Y', strtotime($medicalRecord->date))}}</td>
+                                        <td
+                                            onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">
+                                            {{$medicalRecord->patient->name}}</td>
+                                        <td
+                                            onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">
+                                            {{$medicalRecord->terapis}}</td>
+                                        <td
+                                            onclick="window.location.href='{{route('medical-record.show',$medicalRecord->id)}}'">
+                                            {{$medicalRecord->action}}</td>
                                         <td>
-                                            <a href="{{route('medical-record.edit',$medicalRecord->id)}}" class="text-success me-2">
+                                            <a href="{{route('medical-record.edit',$medicalRecord->id)}}"
+                                                class="text-success me-2">
                                                 <i class="nav-icon i-Pen-2 font-weight-bold"></i>
                                             </a>
-                                            <a href="{{route('medical-record.destroy',$medicalRecord->id)}}" class="text-danger me-2">
+                                            <a href="{{route('medical-record.destroy',$medicalRecord->id)}}"
+                                                class="text-danger me-2">
                                                 <i class="nav-icon i-Close-Window font-weight-bold"></i>
                                             </a>
                                         </td>
