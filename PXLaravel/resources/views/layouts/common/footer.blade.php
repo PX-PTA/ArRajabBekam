@@ -13,7 +13,7 @@
         <div class="d-flex align-items-center">
             <img class="logo" src="{{ asset('assets/images/logo.png') }}" alt="">
             <div>
-                <p class="m-0">Al Hijrah Holistic &copy; {{now()->format(' Y')}}    </p>
+                <p class="m-0">Ar-rajab Bekam Holistik &copy; {{now()->format(' Y')}}    </p>
                 <p class="m-0">All rights reserved</p>
             </div>
         </div>
