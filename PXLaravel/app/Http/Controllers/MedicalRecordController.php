@@ -10,9 +10,26 @@ use App\Http\Requests\UpdateMedicalRecordRequest;
 use Yajra\DataTables\CollectionDataTable;
 use Yajra\DataTables\DataTables;
 use Carbon\Carbon;
+use App\Exports\MedicalCheckupExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Http\Request;    
+
 
 class MedicalRecordController extends Controller
 {
+        
+    public function exportexcel(Request $request) 
+    {
+        $dateExport = $request->dateExport;
+
+        if($dateExport != null){
+            $datetime = $dateExport;
+        }else{
+            $datetime = Carbon::now();
+        }
+        return Excel::download(new MedicalCheckupExport($datetime), 'Rekam-Medias '. Carbon::now().'.xlsx');
+    }
+
     /**
      * Display a listing of the resource.
      */

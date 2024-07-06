@@ -64,6 +64,7 @@ Route::get('/medical-records/edit/{medicalRecord}', [MedicalRecordController::cl
 Route::get('/medical-records/destroy/{medicalRecord}', [MedicalRecordController::class, 'destroy'])->name('medical-record.destroy');
 Route::post('/medical-records/update/{medicalRecord}', [MedicalRecordController::class, 'update'])->name('medical-record.update');
 Route::post('/medical-records/store', [MedicalRecordController::class, 'store'])->name('medical-record.store');
+Route::get('/medical/export', [MedicalRecordController::class, 'exportexcel'])->name('medical-record.export');
 
 Route::get('/products', [ProductController::class, 'index'])->middleware(['auth', 'verified'])->name('product.index');
 Route::get('/product/create/', [ProductController::class, 'create'])->middleware(['auth', 'verified'])->name('product.create');
